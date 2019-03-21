@@ -188,7 +188,7 @@
 		}).on('click', '.navigation-menu > li > a', function () {
 			$('.navbar-collapse').slideUp(300);
 		}).on('click', '.next-section', function () {
-			fullpage_api.moveTo(5);
+			fullpage_api.moveTo(6);//Downloads is 6th
 		});
 
 
@@ -205,7 +205,7 @@
 				});
 				setTimeout(function () {
 					$('.count-number').removeClass('count-number').addClass('counted');
-				}, 1000);
+				}, 1300);
 			});
 		});
 		$('.skills-row').on('inview', function (event, isInView) {
