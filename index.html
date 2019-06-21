@@ -329,7 +329,6 @@
 											<h3>AEonAX</h3>
 											<p>Supreme Overlord</p>
 										</div>
-										<!--/.service-box-->
 									</div>
 									<!--/.item-->
 									<div class="container-fluid item animate" data-animate="fadeInUp">
@@ -356,6 +355,16 @@
 													src="images/team/Mustang-ssc.jpg" alt="" /></span>
 											<h3>Mustang-SSC</h3>
 											<p>Polaris Porter</p>
+										</div>
+									</div>
+									<!--/.item-->
+									<div class="container-fluid item animate" data-animate="fadeInUp">
+										<div class="container-fluid service-box">
+											<span class="service-icon"><img class="img-rounded"
+													src="https://github.com/XEonAX/camera.aeonax.com/releases/download/Track/XEonAX.jpg"
+													alt="" /></span>
+											<h3>AEonAX</h3>
+											<p>Supreme Overlord</p>
 										</div>
 									</div>
 									<!--/.item-->
@@ -389,6 +398,16 @@
 									<div class="container-fluid item animate" data-animate="fadeInUp">
 										<div class="container-fluid service-box">
 											<span class="service-icon"><img class="img-rounded"
+													src="https://github.com/XEonAX/camera.aeonax.com/releases/download/Track/XEonAX.jpg"
+													alt="" /></span>
+											<h3>AEonAX</h3>
+											<p>Supreme Overlord</p>
+										</div>
+									</div>
+									<!--/.item-->
+									<div class="container-fluid item animate" data-animate="fadeInUp">
+										<div class="container-fluid service-box">
+											<span class="service-icon"><img class="img-rounded"
 													src="images/team/psygarden.jpg" alt="" /></span>
 											<h3>psygarden</h3>
 											<p>Collaborator Wizard</p>
@@ -416,11 +435,39 @@
 									<div class="container-fluid item animate" data-animate="fadeInUp">
 										<div class="container-fluid service-box">
 											<span class="service-icon"><img class="img-rounded"
+													src="https://github.com/XEonAX/camera.aeonax.com/releases/download/Track/XEonAX.jpg"
+													alt="" /></span>
+											<h3>AEonAX</h3>
+											<p>Supreme Overlord</p>
+										</div>
+									</div>
+									<!--/.item-->
+									<div class="container-fluid item animate" data-animate="fadeInUp">
+										<div class="container-fluid service-box">
+											<span class="service-icon"><img class="img-rounded"
 													src="images/team/SpanishPaella.jpg" alt="" /></span>
 											<h3>SpanishPaella</h3>
 											<p>Sponsorer</p>
 										</div>
 									</div>
+									<!--/.item-->
+									<div class="container-fluid item animate" data-animate="fadeInUp">
+										<div class="container-fluid service-box">
+											<span class="service-icon"><img class="img-rounded"
+													src="images/team/luckygod777.jpg" alt="" /></span>
+											<h3>Noob God</h3>
+											<p>TechSupport and Sponsorer</p>
+										</div>
+									</div>
+									<!--/.item-->
+									<!-- <div class="container-fluid item animate" data-animate="fadeInUp">
+										<div class="container-fluid service-box">
+											<span class="service-icon"><img class="img-rounded"
+													src="images/team/luckygod777.jpg" alt="" /></span>
+											<h3>Noob God</h3>
+											<p>TechSupport and Sponsorer</p>
+										</div>
+									</div> -->
 									<!--/.item-->
 								</div>
 								<!--/.services-list-->
@@ -761,11 +808,12 @@
 				<div class="container-fluid">
 					<div class="footer-row">
 						<ul class="social-icons">
-							<li><a href="https://github.com/XEonAX/ANXCamera10" title="GitHub"><i
+							<li><a href="https://github.com/XEonAX/ANXCamera" title="GitHub"><i
 										class="fa fa-github"></i></a></li>
 							<li><a href="https://t.me/ANXMiuiCameraChat" title="Telegram"><i
 										class="fa fa-telegram"></i></a></li>
-							<li><a href="https://www.paypal.me/XEonAX" title="Paypal"><i class="fa fa-paypal"></i></a>
+							<li><a href="https://www.paypal.me/XEonAX" title="Paypal"><i 
+										class="fa fa-paypal"></i></a>
 							</li>
 						</ul>
 						<!--/.social-icons-->
@@ -844,6 +892,7 @@
 			});
 			setTimeout(() => {
 				$.getJSON('https://api.github.com/repos/xeonax/ANXCamera10/releases', function (data) {
+					downloads = [];
 					data.forEach(function (release) {
 						var releasesplit = release.name.split(".");
 						//msg += release.name + ":\r\n";
