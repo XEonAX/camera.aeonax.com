@@ -62,7 +62,7 @@
 		if ($('.fullpage-default').length) {
 			var myFullpage = new fullpage('.fullpage-default', {
 				licenseKey: ' C7F41B00-5E824594-9A5EFB99-B556A3D5',
-				anchors: ['home', 'about', 'milestones', 'team', 'features', 'downloads', 'bugs', 'gallery', 'contacts'],
+				anchors: ['home', 'about', 'milestones', 'team', 'features', 'predownloads','downloads','postdownloads', 'bugs', 'gallery', 'contacts'],
 				menu: '#nav',
 				lazyLoad: true,
 				navigation: true,
