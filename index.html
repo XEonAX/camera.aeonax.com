@@ -1120,9 +1120,16 @@
 		function FillTable() {
 			var tabd = $("#tbDownloads").find('tbody');
 			downloads.sort(function (a, b) {
-				return a.pub_date - b.pub_date
+				return new Date(b.pubdate) - new Date(a.pubdate);
 			})
 			tabd.empty();
+			var trow = tabd.append($('<tr>'));
+			trow.append($('<th>').text("Developer"));
+			trow.append($('<th>').text("Device"));
+			trow.append($('<th>').text("Release Type"));
+			trow.append($('<th>').text("Release Version"));
+			trow.append($('<th>').text("Downloads"));
+
 			downloads.forEach(function (download) {
 				var trow = tabd.append($('<tr>'));
 				trow.append($('<td>').text(download.developer));
