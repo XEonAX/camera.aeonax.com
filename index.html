@@ -777,6 +777,7 @@
 								<table class="table table-sm table-dark table-bordered text-light table-striped "
 									id="tbDownloads">
 									<tr>
+										<th>Developer</th>
 										<th>Device</th>
 										<th>Release Type</th>
 										<th>Release Version</th>
@@ -1017,6 +1018,7 @@
 		$.getJSON('https://api.github.com/repos/xeonax/ANXCamera/releases', function (data) {
 			data.forEach(function (release) {
 				var releasesplit = release.name.split(".");
+				var pub_date = release.published_at;
 				//msg += release.name + ":\r\n";
 				// msg += "tag_name:" + release.tag_name + "\r\n";
 				release.assets.forEach(function (asset) {
@@ -1032,34 +1034,63 @@
 						rtype = "Magisk+TWRP";
 
 					downloads.push({
+						developer: "AEonAX",
 						device: releasesplit[0],
 						name: asset.name,
 						type: rtype,
 						url: asset.browser_download_url,
-						downloads: asset.download_count
+						downloads: asset.download_count,
+						pubdate: pub_date
 					});
 				});
 			});
 
-
-			var tabd = $("#tbDownloads").find('tbody');
-
-			downloads.forEach(function (download) {
-				var trow = tabd.append($('<tr>'));
-				trow.append($('<td>').text(download.device));
-				trow.append($('<td>').text(download.type));
-				trow.append($('<td>').append($('<a>')
-					.attr('href', download.url)
-					.text(download.name)
-				));
-				trow.append($('<td>').text(download.downloads));
-			})
+			FillTable();
+			GetLuffitys();
 		});
-		setTimeout(() => {
-			$.getJSON('https://api.github.com/repos/xeonax/ANXCamera10/releases', function (data) {
-				downloads = [];
+
+		function GetLuffitys() {
+
+			$.getJSON('https://api.github.com/repos/Luffitys/ANXCamera/releases', function (data) {
 				data.forEach(function (release) {
 					var releasesplit = release.name.split(".");
+					var pub_date = release.published_at;
+					//msg += release.name + ":\r\n";
+					// msg += "tag_name:" + release.tag_name + "\r\n";
+					release.assets.forEach(function (asset) {
+						//msg += "[" + asset.name + "](" + asset.browser_download_url + ") [";
+						var rtype = "";
+						if (asset.name.includes("Magisk"))
+							rtype = "Magisk";
+
+						if (asset.name.includes("Unity"))
+							rtype = "Magisk+TWRP";
+
+						if (asset.name.includes("StockLib"))
+							rtype = "Magisk+TWRP";
+
+						downloads.push({
+							developer: "Luffitys",
+							device: releasesplit[0],
+							name: asset.name,
+							type: rtype,
+							url: asset.browser_download_url,
+							downloads: asset.download_count,
+							pubdate: pub_date
+						});
+					});
+				});
+				FillTable();
+				GetOld();
+			});
+		}
+
+		function GetOld() {
+
+			$.getJSON('https://api.github.com/repos/xeonax/ANXCamera10/releases', function (data) {
+				data.forEach(function (release) {
+					var releasesplit = release.name.split(".");
+					var pub_date = release.published_at;
 					//msg += release.name + ":\r\n";
 					// msg += "tag_name:" + release.tag_name + "\r\n";
 					release.assets.forEach(function (asset) {
@@ -1072,32 +1103,38 @@
 							rtype = "TWRP";
 
 						downloads.push({
+							developer: "AEonAX",
 							device: releasesplit[0],
 							name: asset.name,
 							type: rtype,
 							url: asset.browser_download_url,
-							downloads: asset.download_count
+							downloads: asset.download_count,
+							pubdate: pub_date
 						});
 					});
 				});
-
-
-				var tabd = $("#tbDownloads").find('tbody');
-
-				downloads.forEach(function (download) {
-					var trow = tabd.append($('<tr>'));
-					trow.append($('<td>').text(download.device));
-					trow.append($('<td>').text(download.type));
-					trow.append($('<td>').append($('<a>')
-						.attr('href', download.url)
-						.text(download.name)
-					));
-					trow.append($('<td>').text(download.downloads));
-				})
-
-
+				FillTable();
 			});
-		}, 6000);
+		}
+
+		function FillTable() {
+			var tabd = $("#tbDownloads").find('tbody');
+			downloads.sort(function (a, b) {
+				return a.pub_date - b.pub_date
+			})
+			tabd.empty();
+			downloads.forEach(function (download) {
+				var trow = tabd.append($('<tr>'));
+				trow.append($('<td>').text(download.developer));
+				trow.append($('<td>').text(download.device));
+				trow.append($('<td>').text(download.type));
+				trow.append($('<td>').append($('<a>')
+					.attr('href', download.url)
+					.text(download.name)
+				));
+				trow.append($('<td>').text(download.downloads));
+			})
+		}
 
 		$('.preloader').fadeOut();
 	</script>
