@@ -1050,7 +1050,6 @@
 		});
 
 		function GetLuffitys() {
-
 			$.getJSON('https://api.github.com/repos/Luffitys/ANXCamera/releases', function (data) {
 				data.forEach(function (release) {
 					var releasesplit = release.name.split(".");
@@ -1086,7 +1085,6 @@
 		}
 
 		function GetOld() {
-
 			$.getJSON('https://api.github.com/repos/xeonax/ANXCamera10/releases', function (data) {
 				data.forEach(function (release) {
 					var releasesplit = release.name.split(".");
