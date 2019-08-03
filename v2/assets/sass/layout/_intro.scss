@@ -6,28 +6,50 @@
 
 /* Intro */
 
-	#intro {
-		background-attachment: fixed;
-		background-image: url('images/intro.svg');
-		background-position: top right;
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
+#intro {
+	background-position: center center;
+	background-attachment: fixed;
+	background-image: url('../../../images/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	&:before {
+		@include vendor('transition', 'opacity #{_duration(activation)} ease');
+		background: transparentize(_palette(bg), 0.1);
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.9;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	p {
+		font-size: 1.25em;
 
-		p {
-			font-size: 1.25em;
-
-			@include breakpoint('<=medium') {
-				br {
-					display: none;
-				}
-			}
-
-			@include breakpoint('<=small') {
-				font-size: 1em;
+		@include breakpoint('<=medium') {
+			br {
+				display: none;
 			}
 		}
 
-		@include breakpoint('<=large') {
-			background-attachment: scroll;
+		@include breakpoint('<=small') {
+			font-size: 1em;
 		}
 	}
+
+	@include breakpoint('<=large') {
+		background-attachment: scroll;
+	}
+	
+}
+
+// #intro::before {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	bottom: 0;
+// 	right: 0;
+// 	z-index: 1;
+// 	background: rgba(0, 0, 0, .5);
+// }
