@@ -14,12 +14,12 @@
 	background-repeat: no-repeat;
 	&:before {
 		@include vendor('transition', 'opacity #{_duration(activation)} ease');
-		background: transparentize(_palette(bg), 0.1);
+		background: transparentize(_palette(bg), 0.05);
 		content: '';
 		display: block;
 		height: 100%;
 		left: 0;
-		opacity: 0.9;
+		opacity: 0.95;
 		position: absolute;
 		top: 0;
 		width: 100%;
