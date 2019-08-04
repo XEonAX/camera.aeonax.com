@@ -6,7 +6,7 @@
 
 /* ShortFeatures */
 
-.shortfeatures {
+.people {
 	@include vendor('display', 'flex');
 	@include vendor('flex-wrap', 'wrap');
 	border-radius: _size(border-radius);
@@ -19,6 +19,7 @@
 		width: 50%;
 		border-top: solid 1px _palette(border);
 		position: relative;
+		padding: 1em;
 
 		&:nth-child(-n + 2) {
 			border-top-width: 0;
@@ -29,7 +30,9 @@
 		}
 
 		div {
-			margin: 1em 1em 1em 6em;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 0 0 1em;
 
 			h2,
 			p {
@@ -37,24 +40,36 @@
 			}
 		}
 
-		.icon {
+		img {
 			@include vendor('transition', ('opacity #{_duration(activation) * 0.5} ease',
 					'transform #{_duration(activation) * 0.5} ease'
 				));
 			@include vendor('transition-delay', '1s');
-			@include vendor('transform', 'scale(1)');
-			position: absolute;
-			top: 50%;
-			-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
-			left: 2em;
-			// top: 3em;
+			// position: absolute;
+			// top: 50%;
+			// -ms-transform: translateY(-50%);
+			// transform: translateY(-50%);
+			display: inline-block;
+			height: 5em;
+			width: 5em;
 			opacity: 1;
+			background-size: cover;
+			border-style: solid;
+			border-radius: 50%;
+			border-color: black;
+		}
+
+		.team {
+			background-image: url('../../images/team/team.jpg');
+		}
+
+		.spons {
+			background-image: url('../../images/spons/spons.jpg');
 		}
 
 		@for $i from 1 through _misc(max-features) {
 			&:nth-child(#{$i}) {
-				.icon {
+				img {
 					@include vendor('transition-delay', '#{(_duration(transition) * 0.75 * $i)}');
 				}
 			}
@@ -63,7 +78,7 @@
 
 	&.inactive {
 		section {
-			.icon {
+			img {
 				@include vendor('transform', 'scale(0.5)');
 				opacity: 0;
 			}
