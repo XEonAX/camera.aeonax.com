@@ -46,9 +46,8 @@
 					<li><a href="#about">About</a></li>
 					<li><a href="#features">Features</a></li>
 					<li><a href="#team">People</a></li>
-					<li><a href="#predownloads">Pre-Downloads</a></li>
+					<li><a href="#instructions">Instructions</a></li>
 					<li><a href="#predownloads">Downloads</a></li>
-					<li><a href="#postdownloads">Post-Downloads</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -64,8 +63,10 @@
 				<h1>ANXCamera</h1>
 				<p>A MIUI Camera Port for AOSP-Based ROMS!</p>
 				<ul class="actions">
-					<li><a href="#about" class="button scrolly">Learn more</a></li>
-					<li><a href="#predownloads" class="button scrolly">Downloads</a></li>
+					<li><a href="#about" class="button large icon solid fa-brain scrolly">Learn more</a></li>
+					<li><a href="#predownloads" class="button large icon solid fa-download scrolly">Downloads</a></li>
+					<li><a href="https://t.me/ANXMiuiCameraChat" target="_blank"
+							class="button large icon brands fa-telegram scrolly">Contact</a></li>
 				</ul>
 			</div>
 		</section>
@@ -144,7 +145,7 @@
 					<section>
 						<span class="icon solid major fa-film"></span>
 						<div>
-							<h2>4k60fps</h2>
+							<h2>4K 60FPS</h2>
 							<p>For those who like big numbers</p>
 						</div>
 					</section>
@@ -372,12 +373,84 @@
 							<p>Sponsor</p>
 						</div>
 					</section>
+					<section>
+						<img class="spons" style="background-position-x: -30em;" />
+						<div>
+							<h2>Catalin Dinu</h2>
+							<p>Sponsor</p>
+						</div>
+					</section>
 				</div>
 			</div>
 		</section>
 
 		<!-- Three -->
-		<section id="predownloads" class="wrapper style2 fade-up">
+		<section id="instructions" class="wrapper style2 fade-up">
+			<div class="inner">
+				<h1>Instructions</h1>
+				<section>
+					<h3 id="supporteddevices">Supported Devices</h3>
+					<span>Check if your device belongs to following:</span>
+					<ul>
+						<li><code>beryllium</code> a.k.a. poco</li>
+						<li><code>dipper</code> a.k.a. mi8</li>
+						<li><code>polaris</code> a.k.a. misx2s</li>
+						<li><code>violet</code> a.k.a. rn7p</li>
+						<li><code>perseus</code> a.k.a. mix3</li>
+						<li><code>cepheus</code> a.k.a. mi9</li>
+						<li><code>raphael</code> a.k.a. k20p</li>
+						<li><code>davinci</code> a.k.a. mi9t/k20</li>
+						<li><code>lavender</code> a.k.a. rn7</li>
+						<li><code>equuleus</code> a.k.a. mi8p</li>
+						<li><code>platina</code> a.k.a. mi8l</li>
+						<li><code>whyred</code> a.k.a. rn5/p</li>
+						<li><code>tulip</code> a.k.a. rn6p</li>
+						<li><code>gemini</code> a.k.a. mi5</li>
+						<li><code>grus</code> a.k.a. mi9se</li>
+						<li><code>sirius</code> a.k.a. mi8se</li>
+						<li><code>pyxis</code> a.k.a. cc9</li>
+						<li><code>laurus</code> a.k.a. cc9e</li>
+					</ul> <span>In decreasing order of support.</span><br />
+					<span>
+						Your <code>ro.product.device</code> must be one of codenames above. So please ensure this on
+						GSIs.
+					</span><br />
+					<br />
+					<span>Currently there are 2 Devs</span>
+					<ul>
+						<li>AEonAX - Owns a Poco</li>
+						<li>Luffitys - Owns a Mi8</li>
+					</ul>
+					<span>
+						Both make Builds with different features and based on different Bases. Check the <a
+							href="https://t.me/ANXMiuiCamera" target="_blank">Telegram Group</a> for more info.
+					</span>
+					<br />
+					<br />
+					<h3 id="legend">Legend</h3>
+					<ul>
+						<li>Singularity -> Works on all <a href="#supporteddevices">supported devices</a></li>
+						<li>OOS -> Oxygen OS, Doesn't work on AOSP-Based ROMS</li>
+						<li>oosberyllium -> Oxygen OS for POCO only</li>
+						<li>OOS Singularity -> Oxygen OS Only, Will work on POCO, Might Work on other <a href="#supporteddevices">supported devices</a></li>
+						<li>Device <code><a href="#supporteddevices">CodeName</a></code> works on that device mostly
+						</li>
+						<li>If FileName contains Magisk -> Flash with Magisk Manager</li>
+						<li>If FileName contains Unity -> Flash with Magisk Manager or TWRP</li>
+					</ul>
+					<br />
+					<h3 id="legend">Installation</h3>
+					<ol>
+						<li>Download the zip from <a href="#downloads">Downloads</a> section</li>
+						<li>Flash the downloaded .zip in Magisk Manager or TWRP</li>
+						<li>Reboot, enjoy</li>
+					</ol>
+				</section>
+			</div>
+		</section>
+
+		<!-- Three -->
+		<section id="predownloads" class="wrapper style3 fade-up">
 			<div class="inner">
 				<h1>Pre Downlo-Ads</h1>
 				<section>
@@ -394,9 +467,12 @@
 		</section>
 
 		<!-- Three -->
-		<section id="downloads" class="wrapper style3 fade-up">
+		<section id="downloads" class="wrapper style1 fade-up">
 			<div class="inner">
 				<h1>Downloads</h1>
+				<span>Check <a href="#legend">Legend</a> to know what is what</span>
+				<br />
+				<br />
 				<div class="table-wrapper">
 					<table class="alt" id="tbDownloads">
 						<thead>
@@ -410,22 +486,17 @@
 							<tr>
 								<td>AEonAX</td>
 								<td>Singularity</td>
-								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
-							</tr>
-							<tr>
-								<td>Luffitys</td>
-								<td>Singularity</td>
-								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
+								<td>Download Link Here</td>
 							</tr>
 							<tr>
 								<td>AEonAX</td>
 								<td>Singularity</td>
-								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
+								<td>Wait for this table to be filled with actual downloads links</td>
 							</tr>
 							<tr>
-								<td>Luffitys</td>
-								<td>Singularity</td>
-								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
+								<td>Meanwhile</td>
+								<td>Look</td>
+								<td>at the ads</td>
 							</tr>
 						</tbody>
 						<!-- <tfoot>
@@ -441,7 +512,7 @@
 		</section>
 
 		<!-- Three -->
-		<section id="postdownloads" class="wrapper style1 fade-up">
+		<section id="postdownloads" class="wrapper style2 fade-up">
 			<div class="inner">
 				<h1>Post Downlo-Ads</h1>
 				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
