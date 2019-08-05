@@ -376,7 +376,7 @@
 					<!-- AdUnit1 -->
 					<ins class="adsbygoogle" style="display:block;width:100%;height:100%"
 						data-ad-client="ca-pub-2619940801849241" data-ad-slot="3915941588" data-ad-format="auto"
-						data-full-width-responsive="true" data-adtest="on"></ins>
+						data-full-width-responsive="true"></ins>
 					<script>
 						(adsbygoogle = window.adsbygoogle || []).push({});
 					</script>
@@ -388,6 +388,45 @@
 		<section id="downloads" class="wrapper style3 fade-up">
 			<div class="inner">
 				<h1>Downloads</h1>
+				<div class="table-wrapper">
+					<table class="alt" id="tbDownloads">
+						<thead>
+							<tr>
+								<th>Developer</th>
+								<th>Device</th>
+								<th>File</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>AEonAX</td>
+								<td>Singularity</td>
+								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
+							</tr>
+							<tr>
+								<td>Luffitys</td>
+								<td>Singularity</td>
+								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
+							</tr>
+							<tr>
+								<td>AEonAX</td>
+								<td>Singularity</td>
+								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
+							</tr>
+							<tr>
+								<td>Luffitys</td>
+								<td>Singularity</td>
+								<td>AVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFile.zip</td>
+							</tr>
+						</tbody>
+						<!-- <tfoot>
+							<tr>
+								<td colspan="2"></td>
+								<td>100.00</td>
+							</tr>
+						</tfoot> -->
+					</table>
+				</div>
 
 			</div>
 		</section>
@@ -432,6 +471,137 @@
 	<script src="assets/js/ajlkn.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script>
+		var downloads = [];
+
+		$.getJSON('https://api.github.com/repos/xeonax/ANXCamera/releases', function (data) {
+			data.forEach(function (release) {
+				var releasesplit = release.name.split(".");
+				var pub_date = release.published_at;
+				//msg += release.name + ":\r\n";
+				// msg += "tag_name:" + release.tag_name + "\r\n";
+				release.assets.forEach(function (asset) {
+					//msg += "[" + asset.name + "](" + asset.browser_download_url + ") [";
+					var rtype = "";
+					if (asset.name.includes("Magisk"))
+						rtype = "Magisk";
+
+					if (asset.name.includes("Unity"))
+						rtype = "Magisk+TWRP";
+
+					if (asset.name.includes("StockLib"))
+						rtype = "Magisk+TWRP";
+
+					downloads.push({
+						developer: "AEonAX",
+						device: releasesplit[0],
+						name: asset.name,
+						type: rtype,
+						url: asset.browser_download_url,
+						downloads: asset.download_count,
+						pubdate: pub_date
+					});
+				});
+			});
+
+			FillTable();
+			GetLuffitys();
+		});
+
+		function GetLuffitys() {
+			$.getJSON('https://api.github.com/repos/Luffitys/ANXCamera_APK_OLD/releases', function (data) {
+				data.forEach(function (release) {
+					var releasesplit = release.name.split(".");
+					var pub_date = release.published_at;
+					//msg += release.name + ":\r\n";
+					// msg += "tag_name:" + release.tag_name + "\r\n";
+					release.assets.forEach(function (asset) {
+						//msg += "[" + asset.name + "](" + asset.browser_download_url + ") [";
+						var rtype = "";
+						if (asset.name.includes("Magisk"))
+							rtype = "Magisk";
+
+						if (asset.name.includes("Unity"))
+							rtype = "Magisk+TWRP";
+
+						if (asset.name.includes("StockLib"))
+							rtype = "Magisk+TWRP";
+
+						downloads.push({
+							developer: "Luffitys",
+							device: releasesplit[0],
+							name: asset.name,
+							type: rtype,
+							url: asset.browser_download_url,
+							downloads: asset.download_count,
+							pubdate: pub_date
+						});
+					});
+				});
+				FillTable();
+				GetOld();
+			});
+		}
+
+		function GetOld() {
+			$.getJSON('https://api.github.com/repos/xeonax/ANXCamera10/releases', function (data) {
+				data.forEach(function (release) {
+					var releasesplit = release.name.split(".");
+					var pub_date = release.published_at;
+					//msg += release.name + ":\r\n";
+					// msg += "tag_name:" + release.tag_name + "\r\n";
+					release.assets.forEach(function (asset) {
+						//msg += "[" + asset.name + "](" + asset.browser_download_url + ") [";
+						var rtype = "";
+						if (asset.name.includes("Magisk"))
+							rtype = "Magisk";
+
+						if (asset.name.includes("Unity"))
+							rtype = "TWRP";
+
+						downloads.push({
+							developer: "AEonAX",
+							device: releasesplit[0],
+							name: asset.name,
+							type: rtype,
+							url: asset.browser_download_url,
+							downloads: asset.download_count,
+							pubdate: pub_date
+						});
+					});
+				});
+				FillTable();
+			});
+		}
+
+		function FillTable() {
+			var tabd = $("#tbDownloads").find('tbody');
+			downloads.sort(function (a, b) {
+				return new Date(b.pubdate) - new Date(a.pubdate);
+			})
+			tabd.empty();
+			// var trow = tabd.append($('<tr>'));
+			// trow.append($('<th>').text("Developer"));
+			// trow.append($('<th>').text("Device"));
+			// trow.append($('<th>').text("Release"));
+			// trow.append($('<th>').text("Release Version"));
+			// trow.append($('<th>').text("Downloads"));
+
+			downloads.forEach(function (download) {
+				var $row = $('<tr/>');
+				//var trow = tabd.append("<tr>");
+				$row.append($('<td>').text(download.developer));
+				$row.append($('<td>').text(download.device));
+				// trow.append($('<td>').text(download.type));
+				$row.append($('<td>').append($('<a>')
+					.attr('href', download.url)
+					.text(download.name)
+				));
+				tabd.append($row);
+				// trow.append($('<td>').text(download.downloads));
+			})
+		}
+	</script>
 
 </body>
 
