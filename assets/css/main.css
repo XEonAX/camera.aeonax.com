@@ -2008,16 +2008,16 @@ button:hover:active:after,
 .people section:nth-child(2n) {
   border-left: solid 1px rgba(255, 255, 255, 0.35);
 }
-.people section div {
+.people section .details {
   display: inline-block;
   vertical-align: top;
   margin: 0 0 0 1em;
 }
-.people section div h2,
-.people section div p {
+.people section .details h2,
+.people section .details p {
   margin: 0;
 }
-.people section img {
+.people section .img {
   -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease;
   -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease;
@@ -2161,7 +2161,7 @@ button:hover:active:after,
   -ms-transition-delay: 3s;
   transition-delay: 3s;
 }
-.people.inactive section img {
+.people.inactive section .img {
   -moz-transform: scale(0.5);
   -webkit-transform: scale(0.5);
   -ms-transform: scale(0.5);

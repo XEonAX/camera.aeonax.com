@@ -29,7 +29,7 @@
 			border-left: solid 1px _palette(border);
 		}
 
-		div {
+		.details {
 			display: inline-block;
 			vertical-align: top;
 			margin: 0 0 0 1em;
@@ -40,7 +40,7 @@
 			}
 		}
 
-		img {
+		.img {
 			@include vendor('transition', ('opacity #{_duration(activation) * 0.5} ease',
 					'transform #{_duration(activation) * 0.5} ease'
 				));
@@ -78,7 +78,7 @@
 
 	&.inactive {
 		section {
-			img {
+			.img {
 				@include vendor('transform', 'scale(0.5)');
 				opacity: 0;
 			}
