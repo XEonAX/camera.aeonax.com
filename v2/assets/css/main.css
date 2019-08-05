@@ -177,10 +177,10 @@ h1.major {
   padding-bottom: 0.35em;
 }
 h1.major:after {
-  background-image: -moz-linear-gradient(to right, #00804f, #b62940);
-  background-image: -webkit-linear-gradient(to right, #00804f, #b62940);
-  background-image: -ms-linear-gradient(to right, #00804f, #b62940);
-  background-image: linear-gradient(to right, #00804f, #b62940);
+  background-image: -moz-linear-gradient(to right, #1b6650, #8a1f31);
+  background-image: -webkit-linear-gradient(to right, #1b6650, #8a1f31);
+  background-image: -ms-linear-gradient(to right, #1b6650, #8a1f31);
+  background-image: linear-gradient(to right, #1b6650, #8a1f31);
   -moz-transition: max-width 0.2s ease;
   -webkit-transition: max-width 0.2s ease;
   -ms-transition: max-width 0.2s ease;
@@ -2183,7 +2183,7 @@ button:hover:active:after,
 }
 @media screen and (max-width: 736px) {
   .people h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 }
 
@@ -2387,7 +2387,7 @@ input[type=checkbox]:checked + label:before,
 input[type=radio]:checked + label:before {
   background: #ffffff;
   border-color: #ffffff;
-  color: #b62940;
+  color: #8a1f31;
   content: "";
 }
 input[type=checkbox]:focus + label:before,
@@ -2469,22 +2469,22 @@ input[type=radio] + label:before {
   font-size: 1.25em;
 }
 .wrapper.style1 .icon.major:before {
-  color: #00804f;
+  color: #1b6650;
 }
 .wrapper.style1-alt .icon.major:before {
-  color: #004d30;
+  color: #103e25;
 }
 .wrapper.style2 .icon.major:before {
-  color: #0a44b1;
+  color: #204774;
 }
 .wrapper.style2-alt .icon.major:before {
-  color: #073181;
+  color: #152f4c;
 }
 .wrapper.style3 .icon.major:before {
-  color: #b62940;
+  color: #8a1f31;
 }
 .wrapper.style3-alt .icon.major:before {
-  color: #8c2031;
+  color: #601622;
 }
 
 /* Image */
@@ -3023,22 +3023,22 @@ table.alt tfoot {
   background-color: #1c1c1c;
 }
 .wrapper.style1 {
-  background-color: #00804f;
+  background-color: #1b6650;
 }
 .wrapper.style1-alt {
-  background-color: #004d30;
+  background-color: #103e25;
 }
 .wrapper.style2 {
-  background-color: #0a44b1;
+  background-color: #204774;
 }
 .wrapper.style2-alt {
-  background-color: #073181;
+  background-color: #152f4c;
 }
 .wrapper.style3 {
-  background-color: #b62940;
+  background-color: #8a1f31;
 }
 .wrapper.style3-alt {
-  background-color: #8c2031;
+  background-color: #601622;
 }
 .wrapper.fullscreen {
   display: -moz-flex;
@@ -3111,7 +3111,7 @@ body.is-ie .wrapper.fullscreen {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background-color: #00804f;
+  background-color: #1b6650;
   cursor: default;
   padding: 1.75em 2em;
 }
@@ -3442,10 +3442,10 @@ body.is-ie #sidebar > .inner {
   background: #363636;
 }
 #sidebar nav a:after {
-  background-image: -moz-linear-gradient(to right, #00804f, #b62940);
-  background-image: -webkit-linear-gradient(to right, #00804f, #b62940);
-  background-image: -ms-linear-gradient(to right, #00804f, #b62940);
-  background-image: linear-gradient(to right, #00804f, #b62940);
+  background-image: -moz-linear-gradient(to right, #1b6650, #8a1f31);
+  background-image: -webkit-linear-gradient(to right, #1b6650, #8a1f31);
+  background-image: -ms-linear-gradient(to right, #1b6650, #8a1f31);
+  background-image: linear-gradient(to right, #1b6650, #8a1f31);
   -moz-transition: max-width 0.2s ease;
   -webkit-transition: max-width 0.2s ease;
   -ms-transition: max-width 0.2s ease;
@@ -3521,7 +3521,7 @@ body.is-preload #sidebar nav ul li {
   }
   #sidebar nav a:after {
     background-image: none;
-    background-color: #b62940;
+    background-color: #8a1f31;
   }
 }
 @media screen and (max-width: 736px) {
