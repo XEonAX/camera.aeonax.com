@@ -187,6 +187,15 @@
 			}
 		});
 
+	function formatBytes(a, b) {
+		if (0 == a) return "0 Bytes";
+		var c = 1024,
+			d = b || 2,
+			e = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
+			f = Math.floor(Math.log(a) / Math.log(c));
+		return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f];
+	}
+
 	$.getJSON('https://api.github.com/repos/xeonax/ANXCamera/releases', function (data) {
 		data.forEach(function (release) {
 			var releasesplit = release.name.split(".");
@@ -212,7 +221,8 @@
 					type: rtype,
 					url: asset.browser_download_url,
 					downloads: asset.download_count,
-					pubdate: pub_date
+					pubdate: pub_date,
+					size:asset.size,
 				});
 			});
 		});
@@ -244,7 +254,8 @@
 						type: rtype,
 						url: asset.browser_download_url,
 						downloads: asset.download_count,
-						pubdate: pub_date
+						pubdate: pub_date,
+						size:asset.size,
 					});
 				});
 			});
@@ -273,7 +284,8 @@
 						type: rtype,
 						url: asset.browser_download_url,
 						downloads: asset.download_count,
-						pubdate: pub_date
+						pubdate: pub_date,
+						size:asset.size,
 					});
 				});
 			});
@@ -285,7 +297,7 @@
 		var tabd = $("#tbDownloads").find('tbody');
 		downloads.sort(function (a, b) {
 			return new Date(b.pubdate) - new Date(a.pubdate);
-		})
+		});
 		tabd.empty();
 
 		downloads.forEach(function (download) {
@@ -296,7 +308,8 @@
 				.attr('href', download.url)
 				.text(download.name)
 			));
+			$row.append($('<td>').text(formatBytes(download.size)));
 			tabd.append($row);
-		})
+		});
 	}
 })(jQuery);
