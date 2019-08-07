@@ -222,7 +222,7 @@
 					url: asset.browser_download_url,
 					downloads: asset.download_count,
 					pubdate: pub_date,
-					size:asset.size,
+					size: asset.size,
 				});
 			});
 		});
@@ -255,7 +255,7 @@
 						url: asset.browser_download_url,
 						downloads: asset.download_count,
 						pubdate: pub_date,
-						size:asset.size,
+						size: asset.size,
 					});
 				});
 			});
@@ -285,7 +285,7 @@
 						url: asset.browser_download_url,
 						downloads: asset.download_count,
 						pubdate: pub_date,
-						size:asset.size,
+						size: asset.size,
 					});
 				});
 			});
@@ -303,7 +303,23 @@
 		downloads.forEach(function (download) {
 			var $row = $('<tr/>');
 			$row.append($('<td>').text(download.developer));
-			$row.append($('<td>').text(download.device));
+
+			var rdevice = [];
+			if (download.device.toLowerCase().includes("singularity"))
+				rdevice.push("All");
+			if (download.device.toLowerCase().includes("beryllium"))
+				rdevice.push("Poco");
+			if (download.device.toLowerCase().includes("dipper"))
+				rdevice.push("Mi8");
+			if (download.device.toLowerCase().includes("polaris"))
+				rdevice.push("Mix2s");
+			if (download.device.toLowerCase().includes("perseus"))
+				rdevice.push("Mix3");
+			if (download.device.toLowerCase().includes("oos"))
+				rdevice.push("OxygenOS Only");
+			if (rdevice.length == 0)
+				rdevice.push(download.device);
+			$row.append($('<td>').text(rdevice.join(",\n")).addClass("multiline"));
 			$row.append($('<td>').append($('<a>')
 				.attr('href', download.url)
 				.text(download.name)
