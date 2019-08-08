@@ -306,7 +306,7 @@
 
 			var rdevice = [];
 			if (download.device.toLowerCase().includes("singularity"))
-				rdevice.push("All");
+				rdevice.push("All Devices");
 			if (download.device.toLowerCase().includes("beryllium"))
 				rdevice.push("Poco");
 			if (download.device.toLowerCase().includes("dipper"))
