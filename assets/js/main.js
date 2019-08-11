@@ -232,6 +232,39 @@
 	});
 
 	function GetLuffitys() {
+		$.getJSON('https://api.github.com/repos/Luffitys/ANXCamera_APK/releases', function (data) {
+			data.forEach(function (release) {
+				var releasesplit = release.name.split(".");
+				var pub_date = release.published_at;
+				release.assets.forEach(function (asset) {
+					var rtype = "";
+					if (asset.name.includes("Magisk"))
+						rtype = "Magisk";
+
+					if (asset.name.includes("Unity"))
+						rtype = "Magisk+TWRP";
+
+					if (asset.name.includes("StockLib"))
+						rtype = "Magisk+TWRP";
+
+					downloads.push({
+						developer: "Luffitys",
+						device: releasesplit[0],
+						name: asset.name,
+						type: rtype,
+						url: asset.browser_download_url,
+						downloads: asset.download_count,
+						pubdate: pub_date,
+						size: asset.size,
+					});
+				});
+			});
+			FillTable();
+			GetLuffitysOld();
+		});
+	}
+
+	function GetLuffitysOld() {
 		$.getJSON('https://api.github.com/repos/Luffitys/ANXCamera_APK_OLD/releases', function (data) {
 			data.forEach(function (release) {
 				var releasesplit = release.name.split(".");
@@ -260,11 +293,11 @@
 				});
 			});
 			FillTable();
-			GetOld();
+			GetANXOld();
 		});
 	}
 
-	function GetOld() {
+	function GetANXOld() {
 		$.getJSON('https://api.github.com/repos/xeonax/ANXCamera10/releases', function (data) {
 			data.forEach(function (release) {
 				var releasesplit = release.name.split(".");
