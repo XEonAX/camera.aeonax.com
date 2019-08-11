@@ -332,7 +332,7 @@
 			return new Date(b.pubdate) - new Date(a.pubdate);
 		});
 		tabd.empty();
-
+		var downloadid = 0;
 		downloads.forEach(function (download) {
 			var $row = $('<tr/>');
 			$row.append($('<td>').text(download.developer));
@@ -359,6 +359,16 @@
 			));
 			$row.append($('<td>').text(formatBytes(download.size)));
 			tabd.append($row);
+			downloadid++;
+			if ((downloadid % 7) == 0) {
+				var $adrow = $('<tr/>');
+				$adrow.append($('<td>').text("Google Ads"));
+				$adrow.append(
+					($('<td>')
+						.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>')))
+					.attr('colspan', 3));
+				tabd.append($adrow);
+			}
 		});
 	}
 })(jQuery);
