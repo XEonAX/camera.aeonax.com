@@ -196,40 +196,42 @@
 		return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f];
 	}
 
-	$.getJSON('https://api.github.com/repos/xeonax/ANXCamera/releases', function (data) {
-		data.forEach(function (release) {
-			var releasesplit = release.name.split(".");
-			var pub_date = release.published_at;
-			//msg += release.name + ":\r\n";
-			// msg += "tag_name:" + release.tag_name + "\r\n";
-			release.assets.forEach(function (asset) {
-				//msg += "[" + asset.name + "](" + asset.browser_download_url + ") [";
-				var rtype = "";
-				if (asset.name.includes("Magisk"))
-					rtype = "Magisk";
+	function GetDownloads() {
+		$.getJSON('https://api.github.com/repos/xeonax/ANXCamera/releases', function (data) {
+			data.forEach(function (release) {
+				var releasesplit = release.name.split(".");
+				var pub_date = release.published_at;
+				//msg += release.name + ":\r\n";
+				// msg += "tag_name:" + release.tag_name + "\r\n";
+				release.assets.forEach(function (asset) {
+					//msg += "[" + asset.name + "](" + asset.browser_download_url + ") [";
+					var rtype = "";
+					if (asset.name.includes("Magisk"))
+						rtype = "Magisk";
 
-				if (asset.name.includes("Unity"))
-					rtype = "Magisk+TWRP";
+					if (asset.name.includes("Unity"))
+						rtype = "Magisk+TWRP";
 
-				if (asset.name.includes("StockLib"))
-					rtype = "Magisk+TWRP";
+					if (asset.name.includes("StockLib"))
+						rtype = "Magisk+TWRP";
 
-				downloads.push({
-					developer: "AEonAX",
-					device: releasesplit[0],
-					name: asset.name,
-					type: rtype,
-					url: asset.browser_download_url,
-					downloads: asset.download_count,
-					pubdate: pub_date,
-					size: asset.size,
+					downloads.push({
+						developer: "AEonAX",
+						device: releasesplit[0],
+						name: asset.name,
+						type: rtype,
+						url: asset.browser_download_url,
+						downloads: asset.download_count,
+						pubdate: pub_date,
+						size: asset.size,
+					});
 				});
 			});
-		});
 
-		FillTable();
-		GetLuffitys();
-	});
+			FillTable();
+			GetLuffitys();
+		});
+	}
 
 	function GetLuffitys() {
 		$.getJSON('https://api.github.com/repos/Luffitys/ANXCamera_APK/releases', function (data) {
@@ -366,10 +368,83 @@
 				$adrow.append($('<td>').text("Google Ads"));
 				$adrow.append(
 					($('<td>')
-						.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>')))
+						.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>'))
+						.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
+					)
 					.attr('colspan', 3));
 				tabd.append($adrow);
 			}
 		});
 	}
+
+	var waitingsince = 0;
+
+	var adsloaded = setInterval(function () {
+		waitingsince++;
+		var tabd = $("#tbDownloads").find('tbody');
+		var $row = null;
+		if (waitingsince == 3) {
+			tabd.empty();
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('Waiting'));
+			$row.append($('<td>').text('For Ads'));
+			$row.append($('<td>').text('to Load'));
+			tabd.append($row);
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('Hope'));
+			$row.append($('<td>').text('you have disabled'));
+			$row.append($('<td>').text('adblockers'));
+			tabd.append($row);
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('Scroll'));
+			$row.append($('<td>').text('Up'));
+			$row.append($('<td>').text('and down'));
+			tabd.append($row);
+		}
+		if (waitingsince == 7) {
+			tabd = $("#tbDownloads").find('tbody');
+			tabd.empty();
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('Still Waiting'));
+			$row.append($('<td>').text('For Ads'));
+			$row.append($('<td>').text('to Load'));
+			tabd.append($row);
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('Really Hope'));
+			$row.append($('<td>').text('you have disabled'));
+			$row.append($('<td>').text('adblockers'));
+			tabd.append($row);
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('Scroll'));
+			$row.append($('<td>').text('Up and Down'));
+			$row.append($('<td>').text('a lot'));
+			tabd.append($row);
+		}
+		if (waitingsince == 15) {
+			tabd = $("#tbDownloads").find('tbody');
+			tabd.empty();
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('U seem smart'));
+			$row.append($('<td>').text('Maybe'));
+			$row.append($('<td>').text('Too Much'));
+			tabd.append($row);
+			$row = $('<tr/>');
+			$row.append($('<td>').text('AEonAX'));
+			$row.append($('<td>').text('Disable'));
+			$row.append($('<td>').text('adblock/ublock/adaway'));
+			$row.append($('<td>').text('to load downloads'));
+			tabd.append($row);
+		}
+		if (window.frames.length > 2) {
+			clearTimeout(adsloaded);
+			GetDownloads();
+		}
+	}, 1000);
 })(jQuery);
