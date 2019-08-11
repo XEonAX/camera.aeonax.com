@@ -334,9 +334,10 @@
 		tabd.empty();
 		var downloadid = 0;
 		downloads.forEach(function (download) {
+			if (!download.name.toLowerCase().includes('anxcamera'))
+				return;
 			var $row = $('<tr/>');
 			$row.append($('<td>').text(download.developer));
-
 			var rdevice = [];
 			if (download.device.toLowerCase().includes("singularity"))
 				rdevice.push("All Devices");
