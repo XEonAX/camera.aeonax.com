@@ -363,26 +363,26 @@
 			$row.append($('<td>').text(formatBytes(download.size)));
 			tabd.append($row);
 			downloadid++;
-			if (downloadid % 7 == 0) {
-				var $amzn = $('<tr/>');
-				$amzn.append($('<td>').text("AMZN Ads"));
-				$amzn.append(
+			if (downloadid == 5) {
+				var $adrow = $('<tr/>');
+				$adrow.append($('<td>').text("G Ads1"));
+				$adrow.append(
 					($('<td>')
-						.append($('<script>var aax_size="160x600"; var aax_pubname = "aeonax-21"; var aax_src="302"; <\/script>'))
-						.append($('<script src="https://c.amazon-adsystem.com/aax2/assoc.js"><\/script>'))
+						.append($('<ins class="adsbygoogle" style="display:block;width:100%;height:100%" data-ad-client="ca-pub-2619940801849241" data-ad-slot="3915941588" data-ad-format="auto" data-full-width-responsive="true"></ins>'))
+						.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
 					)
 					.attr('colspan', 3));
-				tabd.append($amzn);
-			} else if (downloadid % 17 == 0) {
-				var $gads = $('<tr/>');
-				$gads.append($('<td>').text("G Ads"));
-				$gads.append(
+				tabd.append($adrow);
+			} else if (downloadid % 10 == 0) {
+				var $adrow = $('<tr/>');
+				$adrow.append($('<td>').text("G Ads"));
+				$adrow.append(
 					($('<td>')
 						.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>'))
 						.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
 					)
 					.attr('colspan', 3));
-				tabd.append($gads);
+				tabd.append($adrow);
 			}
 		});
 	}
