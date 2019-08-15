@@ -369,7 +369,7 @@
 				$amzn.append(
 					($('<td>')
 						.append($('<script>var aax_size="160x600"; var aax_pubname = "aeonax-21"; var aax_src="302"; <\/script>'))
-						.append($('<script src="http://c.amazon-adsystem.com/aax2/assoc.js"><\/script>'))
+						.append($('<script src="https://c.amazon-adsystem.com/aax2/assoc.js"><\/script>'))
 					)
 					.attr('colspan', 3));
 				tabd.append($amzn);
