@@ -227,8 +227,6 @@
 					});
 				});
 			});
-
-			FillTable();
 			GetLuffitys();
 		});
 	}
@@ -261,7 +259,6 @@
 					});
 				});
 			});
-			FillTable();
 			GetLuffitysOld();
 		});
 	}
@@ -294,7 +291,6 @@
 					});
 				});
 			});
-			FillTable();
 			GetANXOld();
 		});
 	}
@@ -426,7 +422,7 @@
 			$row.append($('<td>').text('a lot'));
 			tabd.append($row);
 		}
-		if (waitingsince == 15) {
+		if (waitingsince > 15) {
 			tabd = $("#tbDownloads").find('tbody');
 			tabd.empty();
 			$row = $('<tr/>');
