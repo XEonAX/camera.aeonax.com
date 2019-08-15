@@ -363,17 +363,7 @@
 			$row.append($('<td>').text(formatBytes(download.size)));
 			tabd.append($row);
 			downloadid++;
-			if (downloadid == 5) {
-				var $adrow = $('<tr/>');
-				$adrow.append($('<td>').text("G Ads1"));
-				$adrow.append(
-					($('<td>')
-						.append($('<ins class="adsbygoogle" style="display:block;width:100%;height:100%" data-ad-client="ca-pub-2619940801849241" data-ad-slot="3915941588" data-ad-format="auto" data-full-width-responsive="true"></ins>'))
-						.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
-					)
-					.attr('colspan', 3));
-				tabd.append($adrow);
-			} else if (downloadid % 10 == 0) {
+			if (downloadid % 7 == 0) {
 				var $adrow = $('<tr/>');
 				$adrow.append($('<td>').text("G Ads"));
 				$adrow.append(
