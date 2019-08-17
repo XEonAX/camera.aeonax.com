@@ -196,6 +196,17 @@
 		return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f];
 	}
 
+	function GetAds() {
+		var amznurls = [];
+		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07HCXQZ4P&asins=B07HCXQZ4P&linkId=a721918852fcba93be35f466e37c56a8&show_border=true&link_opens_in_new_window=true"></iframe>');
+		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07TGDC67L&asins=B07TGDC67L&linkId=3f8e6007f864b5913532b12ca000ecf0&show_border=true&link_opens_in_new_window=true"></iframe>');
+		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B075BCSFNN&asins=B075BCSFNN&linkId=db94df17d4daa2cf077e8b975e42a4ae&show_border=true&link_opens_in_new_window=true"></iframe>');
+		var amznsec = $("#amznads");
+		amznurls.forEach(function (aurl) {
+			amznsec.append($(aurl));
+		});
+	}
+
 	function GetDownloads() {
 		$.getJSON('https://api.github.com/repos/xeonax/ANXCamera/releases', function (data) {
 			data.forEach(function (release) {
@@ -440,6 +451,7 @@
 		}
 		if (window.frames.length > 2) {
 			clearTimeout(adsloaded);
+			GetAds();
 			GetDownloads();
 		}
 	}, 1000);
