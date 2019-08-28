@@ -389,73 +389,245 @@
 
 	var waitingsince = 0;
 
+	// var adsloaded = setInterval(function () {
+	// 	waitingsince++;
+	// 	var tabd = $("#tbDownloads").find('tbody');
+	// 	var $row = null;
+	// 	if (waitingsince == 3) {
+	// 		tabd.empty();
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('Waiting'));
+	// 		$row.append($('<td>').text('For Ads'));
+	// 		$row.append($('<td>').text('to Load'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('Hope'));
+	// 		$row.append($('<td>').text('you have disabled'));
+	// 		$row.append($('<td>').text('adblockers'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('Scroll'));
+	// 		$row.append($('<td>').text('Up'));
+	// 		$row.append($('<td>').text('and down'));
+	// 		tabd.append($row);
+	// 	}
+	// 	if (waitingsince == 7) {
+	// 		tabd = $("#tbDownloads").find('tbody');
+	// 		tabd.empty();
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('Still Waiting'));
+	// 		$row.append($('<td>').text('For Ads'));
+	// 		$row.append($('<td>').text('to Load'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('Really Hope'));
+	// 		$row.append($('<td>').text('you have disabled'));
+	// 		$row.append($('<td>').text('adblockers'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('Scroll'));
+	// 		$row.append($('<td>').text('Up and Down'));
+	// 		$row.append($('<td>').text('a lot'));
+	// 		tabd.append($row);
+	// 	}
+	// 	if (waitingsince > 15) {
+	// 		tabd = $("#tbDownloads").find('tbody');
+	// 		tabd.empty();
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('U seem smart'));
+	// 		$row.append($('<td>').text('Maybe'));
+	// 		$row.append($('<td>').text('Too Much'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('AEonAX'));
+	// 		$row.append($('<td>').text('Disable'));
+	// 		$row.append($('<td>').text('adblock/ublock/adaway'));
+	// 		$row.append($('<td>').text('to load downloads'));
+	// 		tabd.append($row);
+	// 	}
+	// 	if (window.frames.length > 2) {
+	// 		clearTimeout(adsloaded);
+	// 		GetAds();
+	// 		GetDownloads();
+	// 	}
+	// }, 1000);
+
+
+
 	var adsloaded = setInterval(function () {
 		waitingsince++;
-		var tabd = $("#tbDownloads").find('tbody');
+		AntiAdblock("#tbDownloadsANX");
+		AntiAdblock("#tbDownloadsLUFY");
+		if (window.frames.length > 2) {
+			clearTimeout(adsloaded);
+			GetAds();
+			GetDownloadsPling();
+		}
+	}, 1000);
+
+	function AntiAdblock(tbid) {
+		var tabd = $(tbid).find('tbody');
 		var $row = null;
 		if (waitingsince == 3) {
 			tabd.empty();
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('Waiting'));
 			$row.append($('<td>').text('For Ads'));
 			$row.append($('<td>').text('to Load'));
 			tabd.append($row);
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('Hope'));
 			$row.append($('<td>').text('you have disabled'));
 			$row.append($('<td>').text('adblockers'));
 			tabd.append($row);
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('Scroll'));
 			$row.append($('<td>').text('Up'));
 			$row.append($('<td>').text('and down'));
 			tabd.append($row);
 		}
 		if (waitingsince == 7) {
-			tabd = $("#tbDownloads").find('tbody');
 			tabd.empty();
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('Still Waiting'));
 			$row.append($('<td>').text('For Ads'));
 			$row.append($('<td>').text('to Load'));
 			tabd.append($row);
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('Really Hope'));
 			$row.append($('<td>').text('you have disabled'));
 			$row.append($('<td>').text('adblockers'));
 			tabd.append($row);
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('Scroll'));
 			$row.append($('<td>').text('Up and Down'));
 			$row.append($('<td>').text('a lot'));
 			tabd.append($row);
 		}
 		if (waitingsince > 15) {
-			tabd = $("#tbDownloads").find('tbody');
 			tabd.empty();
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('U seem smart'));
 			$row.append($('<td>').text('Maybe'));
 			$row.append($('<td>').text('Too Much'));
 			tabd.append($row);
 			$row = $('<tr/>');
-			$row.append($('<td>').text('AEonAX'));
 			$row.append($('<td>').text('Disable'));
 			$row.append($('<td>').text('adblock/ublock/adaway'));
 			$row.append($('<td>').text('to load downloads'));
 			tabd.append($row);
 		}
-		if (window.frames.length > 2) {
-			clearTimeout(adsloaded);
-			GetAds();
-			GetDownloads();
-		}
-	}, 1000);
+	}
+
+	function GetDownloadsPling() {
+		WaitForAnomaly();
+		$.getJSON('https://cors-anywhere.herokuapp.com/https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1566924312&perpage=1000&page=1', function (data) {
+			data.files.forEach(function (file) {
+				downloadsANX.push({
+					id: file.id,
+					active: file.active,
+					name: file.name,
+					desc: file.description == null ? "" : file.description,
+					size: file.size,
+					version: file.version,
+					url: "https://www.pling.com/p/1321115/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
+				});
+			});
+			FillTablePling('#tbDownloadsANX', downloadsANX);
+		});
+		$.getJSON('https://cors-anywhere.herokuapp.com/https://www.pling.com/p/1321366/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1567008447&perpage=1000&page=1', function (data) {
+			data.files.forEach(function (file) {
+				downloadsLUFY.push({
+					id: file.id,
+					active: file.active,
+					name: file.name,
+					desc: file.description == null ? "" : file.description,
+					size: file.size,
+					version: file.version,
+					url: "https://www.pling.com/p/1321366/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
+				});
+			});
+			FillTablePling('#tbDownloadsLUFY', downloadsLUFY);
+		});
+	}
+
+	function FillTablePling(tbid, dwnlist) {
+		var tabd = $(tbid).find('tbody');
+		dwnlist.sort(function (a, b) {
+			return Number(b.version) - Number(a.version);
+		});
+		tabd.empty();
+		var downloadid = 0;
+		dwnlist.forEach(function (download) {
+			if (download.active == "0")
+				return;
+			if (download.desc.toLowerCase().includes("addon"))
+				return;
+			var $row = $('<tr/>');
+			$row.append($('<td>').text(download.desc).addClass("multiline"));
+			$row.append($('<td>').append($('<a>')
+				.attr('href', download.url)
+				.attr('target', '_blank')
+				.text(download.name)
+			));
+			$row.append($('<td>').text(formatBytes(download.size)));
+			tabd.append($row);
+			downloadid++;
+			if (downloadid % 7 == 0) {
+				var $adrow = $('<tr/>');
+				$adrow.append(
+					($('<td>')
+						.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>'))
+						.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
+					)
+					.attr('colspan', 3));
+				tabd.append($adrow);
+			}
+		});
+	}
+
+	function WaitForAnomaly() {
+		setTimeout(function () {
+			if (downloadsANX.length == 0) {
+				$.getJSON('./assets/data/plinganx.json', function (data) {
+					data.files.forEach(function (file) {
+						downloadsANX.push({
+							id: file.id,
+							active: file.active,
+							name: file.name,
+							desc: file.description == null ? "" : file.description,
+							size: file.size,
+							version: file.version,
+							url: "https://www.pling.com/p/1321115/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
+						});
+					});
+					FillTablePling('#tbDownloadsANX', downloadsANX);
+				});
+			}
+
+			if (downloadsLUFY.length == 0) {
+				$.getJSON('./assets/data/plinganx.json', function (data) {
+					data.files.forEach(function (file) {
+						downloadsLUFY.push({
+							id: file.id,
+							active: file.active,
+							name: file.name,
+							desc: file.description == null ? "" : file.description,
+							size: file.size,
+							version: file.version,
+							url: "https://www.pling.com/p/1321366/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
+						});
+					});
+					FillTablePling('#tbDownloadsLUFY', downloadsLUFY);
+				});
+			}
+		}, 18000);
+	}
 })(jQuery);
