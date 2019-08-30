@@ -222,7 +222,7 @@
 		waitingsince++;
 		AntiAdblock("#tbDownloadsANX");
 		AntiAdblock("#tbDownloadsLUFY");
-		if (window.frames.length > 5) {
+		if (window.frames.length > 2) {
 			clearTimeout(adsloaded);
 			GetAds();
 			GetDownloadsPling();
