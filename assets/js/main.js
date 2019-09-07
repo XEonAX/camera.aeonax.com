@@ -287,6 +287,7 @@
 		WaitForAnomaly();
 		$.getJSON('https://cors-anywhere.herokuapp.com/https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1566924312&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
+
 				downloadsANX.push({
 					id: file.id,
 					active: file.active,
@@ -294,6 +295,7 @@
 					desc: file.description == null ? "" : file.description,
 					size: file.size,
 					version: file.version,
+					tag: file.version + "." + (file.description == null ? "" : file.description),
 					url: "https://www.pling.com/p/1321115/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
 				});
 			});
@@ -316,6 +318,16 @@
 	}
 
 	function FillTablePling(tbid, dwnlist) {
+		if (tbid == "#tbDownloadsANX") {
+			var tabh = $(tbid).find('thead');
+			tabh.empty();
+			var $rowh = $('<tr/>');
+			$rowh.append($('<th>').text("Device"));
+			$rowh.append($('<th>').text("File"));
+			$rowh.append($('<th>').text("Mirror"));
+			$rowh.append($('<td>').text("Size"));
+			tabh.append($rowh);
+		}
 		var tabd = $(tbid).find('tbody');
 		dwnlist.sort(function (a, b) {
 			return Number(b.version) - Number(a.version);
@@ -328,11 +340,43 @@
 			if (download.desc.toLowerCase().includes("addon"))
 				return;
 			var $row = $('<tr/>');
-			$row.append($('<td>').text(download.desc).addClass("multiline"));
+			if (tbid == "#tbDownloadsANX") {
+				var rdevice = [];
+				if (download.desc.toLowerCase().includes("singularity"))
+					rdevice.push("All Devices");
+				if (download.desc.toLowerCase().includes("beryllium"))
+					rdevice.push("Poco");
+				if (download.desc.toLowerCase().includes("dipper"))
+					rdevice.push("Mi8");
+				if (download.desc.toLowerCase().includes("polaris"))
+					rdevice.push("Mix2s");
+				if (download.desc.toLowerCase().includes("perseus"))
+					rdevice.push("Mix3");
+				if (download.desc.toLowerCase().includes("oos"))
+					rdevice.push("OxygenOS Only");
+				if (rdevice.length == 0)
+					rdevice.push(download.desc);
+				$row.append($('<td>').text(rdevice.join(",\n")).addClass("multiline"));
+
+			} else
+				$row.append($('<td>').text(download.desc).addClass("multiline"));
+
 			$row.append($('<td>').append($('<a>')
 				.attr('href', download.url)
 				.attr('target', '_blank')
 				.text(download.name)
+			));
+			$row.append($('<td>').append($('<a>')
+				.attr('href', "https://www.pling.com/dl?file_id=1567851713&file_type=application/octet-stream&file_name=" + download.name.replace('-20190906145826', '') + "&file_size=" + download.size + "&project_id=1321115&link_type=download&is_external=true&external_link=https%3A%2F%2Fdownloads.sourceforge.net%2Fproject%2Fanxcamera%2F" + download.tag + "%2F" + download.name.replace('-20190906145826', '') + "%3Fr%3D%26ts%3D" + Math.round((new Date()).getTime() / 1000))
+				.attr('target', '_blank')
+				.text("SFN1")
+			).append(', ').append($('<a>')
+				.attr('href', "https://downloads.sourceforge.net/project/anxcamera/" + download.tag + "/" + download.name.replace('-20190906145826', '') + "?r=&ts=" + Math.round((new Date()).getTime() / 1000))
+				.attr('target', '_blank')
+				.text("SFN2")
+				.click(function (e) {
+					$(this).attr("href", $(this).attr("href").slice(0, -10) + Math.round((new Date()).getTime() / 1000));
+				})
 			));
 			$row.append($('<td>').text(formatBytes(download.size)));
 			tabd.append($row);
