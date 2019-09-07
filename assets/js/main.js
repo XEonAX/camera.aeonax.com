@@ -371,7 +371,7 @@
 				.attr('target', '_blank')
 				.text("SFN1")
 			).append(', ').append($('<a>')
-				.attr('href', "https://downloads.sourceforge.net/project/anxcamera/" + download.tag + "/" + download.name.replace('-20190906145826', '') + "?r=&ts=" + Math.round((new Date()).getTime() / 1000))
+				.attr('href', "https://downloads.sourceforge.net/project/anxcamera/" + download.tag + "/" + download.name.replace('-20190906145826', '') + "?r=https%3A%2F%2Fcamera.aeonax.com%2F&ts=" + Math.round((new Date()).getTime() / 1000))
 				.attr('target', '_blank')
 				.text("SFN2")
 				.click(function (e) {
