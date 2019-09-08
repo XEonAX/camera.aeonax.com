@@ -342,8 +342,6 @@
 			var $row = $('<tr/>');
 			if (tbid == "#tbDownloadsANX") {
 				var rdevice = [];
-				if (download.desc.toLowerCase().includes("singularity"))
-					rdevice.push("All Devices");
 				if (download.desc.toLowerCase().includes("beryllium"))
 					rdevice.push("Poco");
 				if (download.desc.toLowerCase().includes("dipper"))
@@ -354,6 +352,8 @@
 					rdevice.push("Mix3");
 				if (download.desc.toLowerCase().includes("oos"))
 					rdevice.push("OxygenOS Only");
+				if (download.desc.toLowerCase().includes("singularity"))
+					rdevice.push("All Devices");
 				if (rdevice.length == 0)
 					rdevice.push(download.desc);
 				$row.append($('<td>').text(rdevice.join(",\n")).addClass("multiline"));
@@ -366,18 +366,20 @@
 				.attr('target', '_blank')
 				.text(download.name)
 			));
-			$row.append($('<td>').append($('<a>')
-				.attr('href', "https://www.pling.com/dl?file_id=1567851713&file_type=application/octet-stream&file_name=" + download.name.replace('-20190906145826', '') + "&file_size=" + download.size + "&project_id=1321115&link_type=download&is_external=true&external_link=https%3A%2F%2Fdownloads.sourceforge.net%2Fproject%2Fanxcamera%2F" + download.tag + "%2F" + download.name.replace('-20190906145826', '') + "%3Fr%3D%26ts%3D" + Math.round((new Date()).getTime() / 1000))
-				.attr('target', '_blank')
-				.text("SFN1")
-			).append(', ').append($('<a>')
-				.attr('href', "https://downloads.sourceforge.net/project/anxcamera/" + download.tag + "/" + download.name.replace('-20190906145826', '') + "?r=https%3A%2F%2Fcamera.aeonax.com%2F&ts=" + Math.round((new Date()).getTime() / 1000))
-				.attr('target', '_blank')
-				.text("SFN2")
-				.click(function (e) {
-					$(this).attr("href", $(this).attr("href").slice(0, -10) + Math.round((new Date()).getTime() / 1000));
-				})
-			));
+			if (tbid == "#tbDownloadsANX") {
+				$row.append($('<td>').append($('<a>')
+					.attr('href', "https://www.pling.com/dl?file_id=1567851713&file_type=application/octet-stream&file_name=" + download.name.replace('-20190906145826', '') + "&file_size=" + download.size + "&project_id=1321115&link_type=download&is_external=true&external_link=https%3A%2F%2Fdownloads.sourceforge.net%2Fproject%2Fanxcamera%2F" + download.tag + "%2F" + download.name.replace('-20190906145826', '') + "%3Fr%3D%26ts%3D" + Math.round((new Date()).getTime() / 1000))
+					.attr('target', '_blank')
+					.text("SFN1")
+				).append(', ').append($('<a>')
+					.attr('href', "https://downloads.sourceforge.net/project/anxcamera/" + download.tag + "/" + download.name.replace('-20190906145826', '') + "?r=https%3A%2F%2Fcamera.aeonax.com%2F&ts=" + Math.round((new Date()).getTime() / 1000))
+					.attr('target', '_blank')
+					.text("SFN2")
+					.click(function (e) {
+						$(this).attr("href", $(this).attr("href").slice(0, -10) + Math.round((new Date()).getTime() / 1000));
+					})
+				));
+			}
 			$row.append($('<td>').text(formatBytes(download.size)));
 			tabd.append($row);
 			downloadid++;
@@ -388,7 +390,7 @@
 						.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>'))
 						.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
 					)
-					.attr('colspan', 3));
+					.attr('colspan', 4));
 				tabd.append($adrow);
 			}
 		});
