@@ -285,7 +285,7 @@
 
 	function GetDownloadsPling() {
 		WaitForAnomaly();
-		$.getJSON('https://cors-anywhere.herokuapp.com/https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1566924312&perpage=1000&page=1', function (data) {
+		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1566924312&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
 				downloadsANX.push({
 					id: file.id,
@@ -300,7 +300,7 @@
 			});
 			FillTablePling('#tbDownloadsANX', downloadsANX);
 		});
-		$.getJSON('https://cors-anywhere.herokuapp.com/https://www.pling.com/p/1321366/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1567008447&perpage=1000&page=1', function (data) {
+		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321366/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1567008447&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
 				downloadsLUFY.push({
 					id: file.id,
