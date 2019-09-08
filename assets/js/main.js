@@ -287,7 +287,6 @@
 		WaitForAnomaly();
 		$.getJSON('https://cors-anywhere.herokuapp.com/https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1566924312&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
-
 				downloadsANX.push({
 					id: file.id,
 					active: file.active,
@@ -408,6 +407,7 @@
 							desc: file.description == null ? "" : file.description,
 							size: file.size,
 							version: file.version,
+							tag: file.version + "." + (file.description == null ? "" : file.description),
 							url: "https://www.pling.com/p/1321115/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
 						});
 					});
@@ -425,6 +425,7 @@
 							desc: file.description == null ? "" : file.description,
 							size: file.size,
 							version: file.version,
+							tag: file.version + "." + (file.description == null ? "" : file.description),
 							url: "https://www.pling.com/p/1321366/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
 						});
 					});
