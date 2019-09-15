@@ -285,7 +285,7 @@
 
 	function GetDownloadsPling() {
 		WaitForAnomaly();
-		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1566924312&perpage=1000&page=1', function (data) {
+		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1566924312&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
 				downloadsANX.push({
 					id: file.id,
@@ -295,12 +295,13 @@
 					size: file.size,
 					version: file.version,
 					tag: file.version + "." + (file.description == null ? "" : file.description),
+					mirror: file.tags ? decodeURIComponent(file.tags.replace('link##', '')) : file.tags,
 					url: "https://www.pling.com/p/1321115/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
 				});
 			});
 			FillTablePling('#tbDownloadsANX', downloadsANX);
 		});
-		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321366/getfilesajax?format=jsonp&ignore_status_code=1&status=all&collection_id=1567008447&perpage=1000&page=1', function (data) {
+		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321366/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1567008447&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
 				downloadsLUFY.push({
 					id: file.id,
@@ -324,7 +325,7 @@
 			$rowh.append($('<th>').text("Device"));
 			$rowh.append($('<th>').text("File"));
 			$rowh.append($('<th>').text("Mirror"));
-			$rowh.append($('<td>').text("Size"));
+			$rowh.append($('<th>').text("Size"));
 			tabh.append($rowh);
 		}
 		var tabd = $(tbid).find('tbody');
@@ -367,9 +368,9 @@
 			));
 			if (tbid == "#tbDownloadsANX") {
 				$row.append($('<td>').append($('<a>')
-					.attr('href', "https://www.pling.com/dl?file_id=1567851713&file_type=application/octet-stream&file_name=" + download.name.replace('-20190906145826', '') + "&file_size=" + download.size + "&project_id=1321115&link_type=download&is_external=true&external_link=https%3A%2F%2Fdownloads.sourceforge.net%2Fproject%2Fanxcamera%2F" + download.tag + "%2F" + download.name.replace('-20190906145826', '') + "%3Fr%3D%26ts%3D" + Math.round((new Date()).getTime() / 1000))
+					.attr('href', download.mirror)
 					.attr('target', '_blank')
-					.text("SFN1")
+					.text("APS1")
 				).append(', ').append($('<a>')
 					.attr('href', "https://downloads.sourceforge.net/project/anxcamera/" + download.tag + "/" + download.name.replace('-20190906145826', '') + "?r=https%3A%2F%2Fcamera.aeonax.com%2F&ts=" + Math.round((new Date()).getTime() / 1000))
 					.attr('target', '_blank')
@@ -408,6 +409,7 @@
 							size: file.size,
 							version: file.version,
 							tag: file.version + "." + (file.description == null ? "" : file.description),
+							mirror: file.tags ? decodeURIComponent(file.tags.replace('link##', '')) : file.tags,
 							url: "https://www.pling.com/p/1321115/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
 						});
 					});
@@ -416,7 +418,7 @@
 			}
 
 			if (downloadsLUFY.length == 0) {
-				$.getJSON('./assets/data/plinganx.json', function (data) {
+				$.getJSON('./assets/data/plinglufy.json', function (data) {
 					data.files.forEach(function (file) {
 						downloadsLUFY.push({
 							id: file.id,
