@@ -197,7 +197,7 @@
 	}
 
 	//Note For Adguard Contributors, Users are not supposed to use my site if they want to block ads, The Downloads are not provided for free, they are provided assuming ads are visible on the site.
-	function AdamWrTheGreat() {//Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
+	function AdamWrTheGreat() { //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
 		var amznurls = [];
 		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07WLL998K&asins=B07WLL998K&linkId=908fe2771c671d505ed6188dfccafbe5&show_border=true&link_opens_in_new_window=true"></iframe>');
 		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07HCXQZ4P&asins=B07HCXQZ4P&linkId=a721918852fcba93be35f466e37c56a8&show_border=true&link_opens_in_new_window=true"></iframe>');
@@ -212,7 +212,7 @@
 		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B0749D4QM9&asins=B0749D4QM9&linkId=5444132e4681d07dae9e893cf4610b0c&show_border=true&link_opens_in_new_window=true"></iframe>');
 		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07SPZMH5W&asins=B07SPZMH5W&linkId=a423219e8ade8b51e60ad7f97cdd51c5&show_border=true&link_opens_in_new_window=true"></iframe>');
 		amznurls.push('');
-		var amznsec = $("#AdamWr");//Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
+		var amznsec = $("#AdamWr"); //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
 		amznurls.forEach(function (aurl) {
 			amznsec.append($(aurl));
 		});
@@ -224,7 +224,7 @@
 		waitingsince++;
 		AntiAdblock("#tbDownloadsANX");
 		AntiAdblock("#tbDownloadsLUFY");
-		if (window.frames.length > 2) {
+		if (window.frames.length > 2 && window.frames[2].location != undefined) {
 			clearTimeout(adsloaded);
 			AdamWrTheGreat();
 			GetAdvts();
