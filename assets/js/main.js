@@ -223,7 +223,7 @@
 	var adsloaded = setInterval(function () {
 		waitingsince++;
 		AntiAdblock("#tbDownloadsANX");
-		AntiAdblock("#tbDownloadsLUFY");
+		AntiAdblock("#tbDownloadsLUFFY");
 		if (window.frames.length > 2 && window.frames[2].location != undefined) {
 			clearTimeout(adsloaded);
 			AdamWrTheGreat();
@@ -305,7 +305,7 @@
 		});
 		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321366/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1567008447&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
-				downloadsLUFY.push({
+				downloadsLUFFY.push({
 					id: file.id,
 					active: file.active,
 					name: file.name,
@@ -315,7 +315,7 @@
 					url: "https://www.pling.com/p/1321366/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
 				});
 			});
-			FillTablePling('#tbDownloadsLUFY', downloadsLUFY);
+			FillTablePling('#tbDownloadsLUFFY', downloadsLUFFY);
 		});
 	}
 
@@ -419,10 +419,10 @@
 				});
 			}
 
-			if (downloadsLUFY.length == 0) {
-				$.getJSON('./assets/data/plinglufy.json', function (data) {
+			if (downloadsLUFFY.length == 0) {
+				$.getJSON('./assets/data/plingluffy.json', function (data) {
 					data.files.forEach(function (file) {
-						downloadsLUFY.push({
+						downloadsLUFFY.push({
 							id: file.id,
 							active: file.active,
 							name: file.name,
@@ -433,7 +433,7 @@
 							url: "https://www.pling.com/p/1321366/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
 						});
 					});
-					FillTablePling('#tbDownloadsLUFY', downloadsLUFY);
+					FillTablePling('#tbDownloadsLUFFY', downloadsLUFFY);
 				});
 			}
 		}, 18000);
