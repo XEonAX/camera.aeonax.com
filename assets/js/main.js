@@ -303,7 +303,7 @@
 			});
 			FillTablePling('#tbDownloadsANX', downloadsANX);
 		});
-		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1342269/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1567008447&perpage=1000&page=1', function (data) {
+		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1342269/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1575935661&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
 				downloadsLUFFY.push({
 					id: file.id,
