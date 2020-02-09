@@ -366,6 +366,8 @@
 			$row.append($('<td>').append($('<a>')
 				.attr('href', download.url)
 				.attr('target', '_blank')
+				.attr('data-featherlight', 'iframe')
+				.attr('data-featherlight-iframe-style', 'display:block;border:none;height:500px;width:600px;max-width:100%')
 				.text(download.name)
 			));
 			if (tbid == "#tbDownloadsANX") {
