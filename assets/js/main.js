@@ -225,7 +225,29 @@
 		waitingsince++;
 		AntiAdblock("#tbDownloadsANX");
 		AntiAdblock("#tbDownloadsLUFFY");
-		if (window.frames.length > 2 && window.frames[2].location != undefined) {
+		var locs = [];
+
+		for (i = 0; i < window.frames.length; i++) {
+			var url = 'tillcash';
+			try {
+				url = window.frames[i].document.location.href;
+
+			} catch (error) {
+
+			}
+			locs.push(url);
+		}
+		var bad = 0;
+		for (j = 0; j < locs.length; j++) {
+			if (locs[j] == ("about:blank"))
+				bad++;
+			if (bad >= 2) {
+				console.log("tillcash made me do this");
+				return;
+			}
+		}
+
+		if (typeof (window.BlockAdBlock) != "function" && window.frames.length > 2 && window.frames[2].location != undefined) {
 			clearTimeout(adsloaded);
 			AdamWrTheGreat();
 			GetAdvts();
