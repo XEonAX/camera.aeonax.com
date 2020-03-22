@@ -214,9 +214,11 @@
 		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B0851WWXJC&asins=B0851WWXJC&linkId=9034ba4463e2fc05bb726b7f51e6c174&show_border=true&link_opens_in_new_window=true"></iframe>');
 		amznurls.push('');
 		var amznsec = $("#AdamWr"); //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
-		amznurls.forEach(function (aurl) {
-			amznsec.append($(aurl));
-		});
+		setTimeout(function() {
+			amznurls.forEach(function (aurl) {
+				amznsec.append($(aurl));
+			});
+		}, 5498);
 	}
 
 	var waitingsince = 0;
