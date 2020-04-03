@@ -6,7 +6,12 @@
 
 (function ($) {
 	setInterval(function() { 
-		eval("debugger");
+		eval("/*Notice to GorHill, Mapx, AdamWr, Please don't waste your time on this, You have got better things to do.\r\n \
+		//Can you please not keep breaking my monetisation attempts\r\n\
+		//You don't pay my bills, and users just want everything for free\r\n\
+		//If you still want to do this can you tell the report submitter this code word 'Astalan Gartlin Bodraxa', tell them to announce this on camera group on telegram\r\n\
+		//Thanks for your efforts :'(\r\n\
+		*/debugger");
 	}, 300);
 	var $window = $(window),
 		$body = $('body'),
@@ -45,7 +50,13 @@
 		$(this).parents('form').submit();
 
 	});
+    if (parent.tillcashSucks === undefined)
+        parent.tillcashSucks = 0;
+    parent.tillcashSucks++;
 
+    if (parent.exodius48SucksToo === undefined)
+        parent.exodius48SucksToo = 0;
+    parent.exodius48SucksToo++;
 	// Sidebar.
 	if ($sidebar.length > 0) {
 
@@ -251,7 +262,7 @@
 			}
 		}
 
-		if (typeof (window.BlockAdBlock) != "function" && window.frames.length > 2 && window.frames[2].location != undefined && tillcash=="IsAFool" && exodius48=="IsStupid") {
+		if (typeof (window.BlockAdBlock) != "function" && window.frames.length > 2 && window.frames[2].location != undefined && tillcashSucks==2 && exodius48SucksToo==2) {
 			clearTimeout(adsloaded);
 			AdamWrTheGreat();
 			GetAdvts();
@@ -467,4 +478,5 @@
 			}
 		}, 18000);
 	}
+	if (top != self) { top.location.replace("https://disableadblock.com/"); }
 })(jQuery);
