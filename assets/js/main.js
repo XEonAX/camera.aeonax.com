@@ -425,16 +425,16 @@
 			$row.append($('<td>').text(formatBytes(download.size)));
 			tabd.append($row);
 			downloadid++;
-			if (downloadid % 7 == 0) {
-				var $adrow = $('<tr/>');
-				$adrow.append(
-					($('<td>')
-						.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>'))
-						.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
-					)
-					.attr('colspan', 4));
-				tabd.append($adrow);
-			}
+			// if (downloadid % 7 == 0) {
+			// 	var $adrow = $('<tr/>');
+			// 	$adrow.append(
+			// 		($('<td>')
+			// 			.append($('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-2619940801849241" data-ad-slot="9854743525"></ins>'))
+			// 			.append($('<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>'))
+			// 		)
+			// 		.attr('colspan', 4));
+			// 	tabd.append($adrow);
+			// }
 		});
 	}
 
