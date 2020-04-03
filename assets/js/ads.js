@@ -1,4 +1,4 @@
 (function AddAds(page) {
-    parent.tillcast = "IsAFool";
+    parent.tillcash = "IsAFool";
     parent.exodius48="IsStupid";
 })();
