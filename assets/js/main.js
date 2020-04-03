@@ -249,7 +249,7 @@
 			}
 		}
 
-		if (typeof (window.BlockAdBlock) != "function" && window.frames.length > 2 && window.frames[2].location != undefined) {
+		if (typeof (window.BlockAdBlock) != "function" && window.frames.length > 2 && window.frames[2].location != undefined && tillcash=="IsAFool" && exodius48=="IsStupid") {
 			clearTimeout(adsloaded);
 			AdamWrTheGreat();
 			GetAdvts();
