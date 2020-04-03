@@ -5,7 +5,9 @@
 */
 
 (function ($) {
-
+	setInterval(function() { 
+		eval("debugger");
+	}, 300);
 	var $window = $(window),
 		$body = $('body'),
 		$sidebar = $('#sidebar');
