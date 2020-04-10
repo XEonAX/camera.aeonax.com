@@ -11,7 +11,7 @@
 		//You don't pay my bills, and users just want everything for free\r\n\
 		//If you still want to do this can you tell the report submitter this code word 'Astalan Gartlin Bodraxa', tell them to announce this on camera group on telegram\r\n\
 		//Thanks for your efforts :'(\r\n\
-		*/debugger");
+		//debugger*/");
 	}, 300);
 	var $window = $(window),
 		$body = $('body'),
@@ -211,27 +211,27 @@
 
 	//Note For Adguard Contributors, Users are not supposed to use my site if they want to block ads, The Downloads are not provided for free, they are provided assuming ads are visible on the site.
 	function AdamWrTheGreat() { //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
-		var amznurls = [];
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B084DL5HWN&asins=B084DL5HWN&linkId=e42da0d7ac742847c8c92492a536f02e&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07BTKVG7S&asins=B07BTKVG7S&linkId=6584a6d10c48fc96bf629d28a1e1347f&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B079RQ6VXV&asins=B079RQ6VXV&linkId=ef6c63b304c20375ccdea0d0f470d84c&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07JY1BWZP&asins=B07JY1BWZP&linkId=95ff3b53907388b2ee48fcdd9e4ba16a&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07WLL998K&asins=B07WLL998K&linkId=908fe2771c671d505ed6188dfccafbe5&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07VTQGCF4&asins=B07VTQGCF4&linkId=f8004f24e9b89253d07aedd0d33b66f9&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07X841RGL&asins=B07X841RGL&linkId=bd79acd33d2c0f0768f68521987974fd&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07HGJKDQL&asins=B07HGJKDQL&linkId=6bf61ab7b183df678d03c98f7304d396&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B073K14CVB&asins=B073K14CVB&linkId=d61c97da20ae8df5e2449875eea37105&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07P8LDZJ5&asins=B07P8LDZJ5&linkId=3e9a298f78e5c47c4fa99d06ee7b20f7&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07XMD275Q&asins=B07XMD275Q&linkId=4fcd735e4e4e2c2dc291e5a6c90926a0&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B08447C279&asins=B08447C279&linkId=ec10941f9a1b3b9cdb8bd0c52e29ba4a&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B0851WWXJC&asins=B0851WWXJC&linkId=9034ba4463e2fc05bb726b7f51e6c174&show_border=true&link_opens_in_new_window=true"></iframe>');
-		amznurls.push('');
-		var amznsec = $("#AdamWr"); //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
-		setTimeout(function() {
-			amznurls.forEach(function (aurl) {
-				amznsec.append($(aurl));
-			});
-		}, 5498);
+		// var amznurls = [];
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B084DL5HWN&asins=B084DL5HWN&linkId=e42da0d7ac742847c8c92492a536f02e&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07BTKVG7S&asins=B07BTKVG7S&linkId=6584a6d10c48fc96bf629d28a1e1347f&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B079RQ6VXV&asins=B079RQ6VXV&linkId=ef6c63b304c20375ccdea0d0f470d84c&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07JY1BWZP&asins=B07JY1BWZP&linkId=95ff3b53907388b2ee48fcdd9e4ba16a&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07WLL998K&asins=B07WLL998K&linkId=908fe2771c671d505ed6188dfccafbe5&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07VTQGCF4&asins=B07VTQGCF4&linkId=f8004f24e9b89253d07aedd0d33b66f9&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07X841RGL&asins=B07X841RGL&linkId=bd79acd33d2c0f0768f68521987974fd&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07HGJKDQL&asins=B07HGJKDQL&linkId=6bf61ab7b183df678d03c98f7304d396&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B073K14CVB&asins=B073K14CVB&linkId=d61c97da20ae8df5e2449875eea37105&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07P8LDZJ5&asins=B07P8LDZJ5&linkId=3e9a298f78e5c47c4fa99d06ee7b20f7&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07XMD275Q&asins=B07XMD275Q&linkId=4fcd735e4e4e2c2dc291e5a6c90926a0&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B08447C279&asins=B08447C279&linkId=ec10941f9a1b3b9cdb8bd0c52e29ba4a&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B0851WWXJC&asins=B0851WWXJC&linkId=9034ba4463e2fc05bb726b7f51e6c174&show_border=true&link_opens_in_new_window=true"></iframe>');
+		// amznurls.push('');
+		// var amznsec = $("#AdamWr"); //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
+		// setTimeout(function() {
+		// 	amznurls.forEach(function (aurl) {
+		// 		amznsec.append($(aurl));
+		// 	});
+		// }, 5498);
 	}
 
 	var waitingsince = 0;
@@ -241,12 +241,12 @@
 		AntiAdblock("#tbDownloadsANX");
 		AntiAdblock("#tbDownloadsLUFFY");
 		var locs = [];
-
-		for (i = 0; i < window.frames.length; i++) {
+        var frames = document.getElementsByTagName("iframe");
+		for (i = 0; i < frames.length; i++) {
 			var url = 'tillcash';
 			try {
-				url = window.frames[i].document.location.href;
-
+				url = frames[i].src;
+				console.log(url);
 			} catch (error) {
 
 			}
@@ -254,10 +254,10 @@
 		}
 		var bad = 0;
 		for (j = 0; j < locs.length; j++) {
-			if (locs[j] == ("about:blank"))
+			if (locs[j] == ("about:blank") || locs[j] == ("data:text/html;"))//AdamWr Please NO!!
 				bad++;
 			if (bad >= 2) {
-				console.log("tillcash made me do this");
+				console.log("tillcash and giodeluigi made me do this");
 				return;
 			}
 		}
