@@ -5,14 +5,6 @@
 */
 
 (function ($) {
-	setInterval(function() { 
-		eval("/*Notice to GorHill, Mapx, AdamWr, Please don't waste your time on this, You have got better things to do.\r\n \
-		//Can you please not keep breaking my monetisation attempts\r\n\
-		//You don't pay my bills, and users just want everything for free\r\n\
-		//If you still want to do this can you tell the report submitter this code word 'Astalan Gartlin Bodraxa', tell them to announce this on camera group on telegram\r\n\
-		//Thanks for your efforts :'(\r\n\
-		//debugger*/");
-	}, 300);
 	var $window = $(window),
 		$body = $('body'),
 		$sidebar = $('#sidebar');
@@ -50,13 +42,7 @@
 		$(this).parents('form').submit();
 
 	});
-    if (parent.tillcashSucks === undefined)
-        parent.tillcashSucks = 0;
-    parent.tillcashSucks++;
 
-    if (parent.exodius48SucksToo === undefined)
-        parent.exodius48SucksToo = 0;
-    parent.exodius48SucksToo++;
 	// Sidebar.
 	if ($sidebar.length > 0) {
 
@@ -209,8 +195,7 @@
 		return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f];
 	}
 
-	//Note For Adguard Contributors, Users are not supposed to use my site if they want to block ads, The Downloads are not provided for free, they are provided assuming ads are visible on the site.
-	function AdamWrTheGreat() { //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
+	function GetAmznAds() { 
 		// var amznurls = [];
 		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B084DL5HWN&asins=B084DL5HWN&linkId=e42da0d7ac742847c8c92492a536f02e&show_border=true&link_opens_in_new_window=true"></iframe>');
 		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07BTKVG7S&asins=B07BTKVG7S&linkId=6584a6d10c48fc96bf629d28a1e1347f&show_border=true&link_opens_in_new_window=true"></iframe>');
@@ -226,7 +211,7 @@
 		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B08447C279&asins=B08447C279&linkId=ec10941f9a1b3b9cdb8bd0c52e29ba4a&show_border=true&link_opens_in_new_window=true"></iframe>');
 		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B0851WWXJC&asins=B0851WWXJC&linkId=9034ba4463e2fc05bb726b7f51e6c174&show_border=true&link_opens_in_new_window=true"></iframe>');
 		// amznurls.push('');
-		// var amznsec = $("#AdamWr"); //Named after great AdGuard Contributor, Who wants to destroy my monetization attempts
+		// var amznsec = $("#AmznAds");
 		// setTimeout(function() {
 		// 	amznurls.forEach(function (aurl) {
 		// 		amznsec.append($(aurl));
@@ -236,94 +221,97 @@
 
 	var waitingsince = 0;
 
-	var adsloaded = setInterval(function () {
-		waitingsince++;
-		AntiAdblock("#tbDownloadsANX");
-		AntiAdblock("#tbDownloadsLUFFY");
-		var locs = [];
-        var frames = document.getElementsByTagName("iframe");
-		for (i = 0; i < frames.length; i++) {
-			var url = 'tillcash';
-			try {
-				url = frames[i].src;
-				console.log(url);
-			} catch (error) {
+	// var adsloaded = setInterval(function () {
+	// 	waitingsince++;
+	// 	AntiAdblock("#tbDownloadsANX");
+	// 	AntiAdblock("#tbDownloadsLUFFY");
+	// 	var locs = [];
+    //     var frames = document.getElementsByTagName("iframe");
+	// 	for (i = 0; i < frames.length; i++) {
+	// 		var url = 'tillcash';
+	// 		try {
+	// 			url = frames[i].src;
+	// 			console.log(url);
+	// 		} catch (error) {
 
-			}
-			locs.push(url);
-		}
-		var bad = 0;
-		for (j = 0; j < locs.length; j++) {
-			if (locs[j] == ("about:blank") || locs[j] == ("data:text/html;"))//AdamWr Please NO!!
-				bad++;
-			if (bad >= 2) {
-				console.log("tillcash and giodeluigi made me do this");
-				return;
-			}
-		}
+	// 		}
+	// 		locs.push(url);
+	// 	}
+	// 	var bad = 0;
+	// 	for (j = 0; j < locs.length; j++) {
+	// 		if (locs[j] == ("about:blank") || locs[j] == ("data:text/html;"))//AdamWr Please NO!!
+	// 			bad++;
+	// 		if (bad >= 2) {
+	// 			console.log("tillcash and giodeluigi made me do this");
+	// 			return;
+	// 		}
+	// 	}
 
-		if (typeof (window.BlockAdBlock) != "function" && window.frames.length > 2 && window.frames[2].location != undefined && tillcashSucks==2 && exodius48SucksToo==2) {
-			clearTimeout(adsloaded);
-			AdamWrTheGreat();
-			GetAdvts();
-		}
-	}, 1001);
+	// 	if (typeof (window.BlockAdBlock) != "function" && window.frames.length > 2 && window.frames[2].location != undefined && tillcashSucks==2 && exodius48SucksToo==2) {
+	// 		clearTimeout(adsloaded);
+	// 		GetAmznAds();
+	// 		GetDownloads();
+	// 	}
+	// }, 1001);
 
-	function AntiAdblock(tbid) {
-		var tabd = $(tbid).find('tbody');
-		var $row = null;
-		if (waitingsince == 3) {
-			tabd.empty();
-			$row = $('<tr/>');
-			$row.append($('<td>').text('Waiting'));
-			$row.append($('<td>').text('For Ads'));
-			$row.append($('<td>').text('to Load'));
-			tabd.append($row);
-			$row = $('<tr/>');
-			$row.append($('<td>').text('Hope'));
-			$row.append($('<td>').text('you have disabled'));
-			$row.append($('<td>').text('adblockers'));
-			tabd.append($row);
-			$row = $('<tr/>');
-			$row.append($('<td>').text('Scroll'));
-			$row.append($('<td>').text('Up'));
-			$row.append($('<td>').text('and down'));
-			tabd.append($row);
-		}
-		if (waitingsince == 7) {
-			tabd.empty();
-			$row = $('<tr/>');
-			$row.append($('<td>').text('Still Waiting'));
-			$row.append($('<td>').text('For Ads'));
-			$row.append($('<td>').text('to Load'));
-			tabd.append($row);
-			$row = $('<tr/>');
-			$row.append($('<td>').text('Really Hope'));
-			$row.append($('<td>').text('you have disabled'));
-			$row.append($('<td>').text('adblockers'));
-			tabd.append($row);
-			$row = $('<tr/>');
-			$row.append($('<td>').text('Scroll'));
-			$row.append($('<td>').text('Up and Down'));
-			$row.append($('<td>').text('a lot'));
-			tabd.append($row);
-		}
-		if (waitingsince > 15) {
-			tabd.empty();
-			$row = $('<tr/>');
-			$row.append($('<td>').text('U seem smart'));
-			$row.append($('<td>').text('Maybe'));
-			$row.append($('<td>').text('Too Much'));
-			tabd.append($row);
-			$row = $('<tr/>');
-			$row.append($('<td>').text('Disable'));
-			$row.append($('<td>').text('adblock/ublock/adaway'));
-			$row.append($('<td>').text('to load downloads'));
-			tabd.append($row);
-		}
-	}
+	GetAmznAds();
+	GetDownloads();
 
-	function GetAdvts() {
+	// function AntiAdblock(tbid) {
+	// 	var tabd = $(tbid).find('tbody');
+	// 	var $row = null;
+	// 	if (waitingsince == 3) {
+	// 		tabd.empty();
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('Waiting'));
+	// 		$row.append($('<td>').text('For Ads'));
+	// 		$row.append($('<td>').text('to Load'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('Hope'));
+	// 		$row.append($('<td>').text('you have disabled'));
+	// 		$row.append($('<td>').text('adblockers'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('Scroll'));
+	// 		$row.append($('<td>').text('Up'));
+	// 		$row.append($('<td>').text('and down'));
+	// 		tabd.append($row);
+	// 	}
+	// 	if (waitingsince == 7) {
+	// 		tabd.empty();
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('Still Waiting'));
+	// 		$row.append($('<td>').text('For Ads'));
+	// 		$row.append($('<td>').text('to Load'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('Really Hope'));
+	// 		$row.append($('<td>').text('you have disabled'));
+	// 		$row.append($('<td>').text('adblockers'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('Scroll'));
+	// 		$row.append($('<td>').text('Up and Down'));
+	// 		$row.append($('<td>').text('a lot'));
+	// 		tabd.append($row);
+	// 	}
+	// 	if (waitingsince > 15) {
+	// 		tabd.empty();
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('U seem smart'));
+	// 		$row.append($('<td>').text('Maybe'));
+	// 		$row.append($('<td>').text('Too Much'));
+	// 		tabd.append($row);
+	// 		$row = $('<tr/>');
+	// 		$row.append($('<td>').text('Disable'));
+	// 		$row.append($('<td>').text('adblock/ublock/adaway'));
+	// 		$row.append($('<td>').text('to load downloads'));
+	// 		tabd.append($row);
+	// 	}
+	// }
+
+	function GetDownloads() {
 		WaitForAnomaly();
 		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1321115/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1566924312&perpage=1000&page=1', function (data) {
 			data.files.forEach(function (file) {
@@ -341,20 +329,20 @@
 			});
 			FillTablePling('#tbDownloadsANX', downloadsANX);
 		});
-		$.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1342269/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1575935661&perpage=1000&page=1', function (data) {
-			data.files.forEach(function (file) {
-				downloadsLUFFY.push({
-					id: file.id,
-					active: file.active,
-					name: file.name,
-					desc: file.description == null ? "" : file.description,
-					size: file.size,
-					version: file.version,
-					url: "https://www.pling.com/p/1342269/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
-				});
-			});
-			FillTablePling('#tbDownloadsLUFFY', downloadsLUFFY);
-		});
+		// $.getJSON('https://dry-waterfall-10e0.anx.workers.dev/?https://www.pling.com/p/1342269/getfilesajax?format=jsonp&ignore_status_code=0&status=active&collection_id=1575935661&perpage=1000&page=1', function (data) {
+		// 	data.files.forEach(function (file) {
+		// 		downloadsLUFFY.push({
+		// 			id: file.id,
+		// 			active: file.active,
+		// 			name: file.name,
+		// 			desc: file.description == null ? "" : file.description,
+		// 			size: file.size,
+		// 			version: file.version,
+		// 			url: "https://www.pling.com/p/1342269/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
+		// 		});
+		// 	});
+		// 	FillTablePling('#tbDownloadsLUFFY', downloadsLUFFY);
+		// });
 	}
 
 	function FillTablePling(tbid, dwnlist) {
@@ -459,24 +447,24 @@
 				});
 			}
 
-			if (downloadsLUFFY.length == 0) {
-				$.getJSON('./assets/data/plingluffy.json', function (data) {
-					data.files.forEach(function (file) {
-						downloadsLUFFY.push({
-							id: file.id,
-							active: file.active,
-							name: file.name,
-							desc: file.description == null ? "" : file.description,
-							size: file.size,
-							version: file.version,
-							tag: file.version + "." + (file.description == null ? "" : file.description),
-							url: "https://www.pling.com/p/1342269/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
-						});
-					});
-					FillTablePling('#tbDownloadsLUFFY', downloadsLUFFY);
-				});
-			}
-		}, 18000);
+			// if (downloadsLUFFY.length == 0) {
+			// 	$.getJSON('./assets/data/plingluffy.json', function (data) {
+			// 		data.files.forEach(function (file) {
+			// 			downloadsLUFFY.push({
+			// 				id: file.id,
+			// 				active: file.active,
+			// 				name: file.name,
+			// 				desc: file.description == null ? "" : file.description,
+			// 				size: file.size,
+			// 				version: file.version,
+			// 				tag: file.version + "." + (file.description == null ? "" : file.description),
+			// 				url: "https://www.pling.com/p/1342269/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
+			// 			});
+			// 		});
+			// 		FillTablePling('#tbDownloadsLUFFY', downloadsLUFFY);
+			// 	});
+			// }
+		}, 15000);
 	}
-	if (top != self) { top.location.replace("https://disableadblock.com/"); }
+	if (top != self) { top.location.replace("https://camera.aeonax.com/"); }
 })(jQuery);
