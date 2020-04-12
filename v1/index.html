@@ -470,14 +470,6 @@
 										</div>
 									</div>
 									<!--/.item-->
-									<div class="container-fluid item animate" data-animate="fadeInUp">
-										<div class="container-fluid service-box">
-											<span class="service-icon"><img class="img-rounded"
-													src="images/team/Luffitys.jpg" alt="" /></span>
-											<h3>Luffitys</h3>
-											<p>Successor Supreme</p>
-										</div>
-									</div>
 									<!--/.item-->
 									<div class="container-fluid item animate" data-animate="fadeInUp">
 										<div class="container-fluid service-box">
@@ -1046,43 +1038,7 @@
 			});
 
 			FillTable();
-			GetLuffitys();
 		});
-
-		function GetLuffitys() {
-			$.getJSON('https://api.github.com/repos/Luffitys/ANXCamera/releases', function (data) {
-				data.forEach(function (release) {
-					var releasesplit = release.name.split(".");
-					var pub_date = release.published_at;
-					//msg += release.name + ":\r\n";
-					// msg += "tag_name:" + release.tag_name + "\r\n";
-					release.assets.forEach(function (asset) {
-						//msg += "[" + asset.name + "](" + asset.browser_download_url + ") [";
-						var rtype = "";
-						if (asset.name.includes("Magisk"))
-							rtype = "Magisk";
-
-						if (asset.name.includes("Unity"))
-							rtype = "Magisk+TWRP";
-
-						if (asset.name.includes("StockLib"))
-							rtype = "Magisk+TWRP";
-
-						downloads.push({
-							developer: "Luffitys",
-							device: releasesplit[0],
-							name: asset.name,
-							type: rtype,
-							url: asset.browser_download_url,
-							downloads: asset.download_count,
-							pubdate: pub_date
-						});
-					});
-				});
-				FillTable();
-				GetOld();
-			});
-		}
 
 		function GetOld() {
 			$.getJSON('https://api.github.com/repos/xeonax/ANXCamera10/releases', function (data) {
