@@ -537,7 +537,8 @@
 					<h3 id="installation">Installation</h3>
 					<ol>
 						<li>Download the .zip from the <a href="#downloads">Downloads</a> section</li>
-						<li>Flash the downloaded .zip in Magisk Manager (recommended) or TWRP (not recommended). Make sure to read whatever the
+						<li>Flash the downloaded .zip in Magisk Manager (recommended) or TWRP (not recommended). Make
+							sure to read whatever the
 							Installation Screen displays</li>
 						<li>Check <a href="#postdownloads">Addons</a> to get addons which might be required for your
 							device. Flash via Magisk or TWRP as mentioned above</li>
@@ -702,7 +703,7 @@
 										data-featherlight-iframe-style="display:block;border:none;height:500px;width:600px;max-width:100%"
 										href="https://www.pling.com/p/1374766/startdownload?file_id=1593010395&file_name=48MPFixQ_181.GlossyIntelligentCock.zip&file_type=application/zip&file_size=8209361"
 										target="_blank">48MPFixQ_181.GlossyIntelligentCock.zip</a>
-                                </td>
+								</td>
 							</tr>
 							<tr>
 								<td>Luffitys</td>
@@ -1005,8 +1006,18 @@
 			}
 		});
 	</script>
-	<iframe src="https://www.pling.com/p/1321115/" style="position:absolute;top:0;left:0;width:100%;height:1px;" frameborder="0" sandbox="allow-scripts"></iframe>
-	<iframe src="https://www.pling.com/p/1374766/" style="position:absolute;top:0;left:0;width:100%;height:1px;" frameborder="0" sandbox="allow-scripts"></iframe>
+	<iframe id="anxfr" data-zsrc="https://www.pling.com/p/1321115/"
+		style="position:absolute;top:0;left:0;width:100%;height:1px;" frameborder="0" sandbox="allow-scripts"></iframe>
+	<iframe id="noidfr" data-zsrc="https://www.pling.com/p/1374766/"
+		style="position:absolute;top:0;left:0;width:100%;height:1px;" frameborder="0" sandbox="allow-scripts"></iframe>
+	<script>
+		setTimeout(function () {
+			var anxfr= document.getElementById('anxfr');
+			anxfr.src = anxfr.dataset.zsrc; 
+			var noidfr= document.getElementById('noidfr');
+			noidfr.src = noidfr.dataset.zsrc; 
+		}, 15000)
+	</script>
 </body>
 
 </html>
