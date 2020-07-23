@@ -195,7 +195,7 @@
 		return parseFloat((a / Math.pow(c, f)).toFixed(d)) + " " + e[f];
 	}
 
-	function GetAmznAds() { 
+	function GetAmznAds() {
 		// var amznurls = [];
 		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B084DL5HWN&asins=B084DL5HWN&linkId=e42da0d7ac742847c8c92492a536f02e&show_border=true&link_opens_in_new_window=true"></iframe>');
 		// amznurls.push('<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=aeonax-21&language=en_IN&marketplace=amazon&region=IN&placement=B07BTKVG7S&asins=B07BTKVG7S&linkId=6584a6d10c48fc96bf629d28a1e1347f&show_border=true&link_opens_in_new_window=true"></iframe>');
@@ -226,7 +226,7 @@
 	// 	AntiAdblock("#tbDownloadsANX");
 	// 	AntiAdblock("#tbDownloadsLUFFY");
 	// 	var locs = [];
-    //     var frames = document.getElementsByTagName("iframe");
+	//     var frames = document.getElementsByTagName("iframe");
 	// 	for (i = 0; i < frames.length; i++) {
 	// 		var url = 'tillcash';
 	// 		try {
@@ -431,7 +431,7 @@
 			if (downloadsANX.length == 0) {
 				$.getJSON('./assets/data/plinganx.json', function (data) {
 					data.files.forEach(function (file) {
-						downloadsANX.push({
+						var item = {
 							id: file.id,
 							active: file.active,
 							name: file.name,
@@ -441,7 +441,9 @@
 							tag: file.version + "." + (file.description == null ? "" : file.description),
 							mirror: file.tags ? decodeURIComponent(file.tags.replace('link##', '')) : file.tags,
 							url: "https://www.pling.com/p/1321115/startdownload?file_id=" + file.id + "&file_name=" + file.name + "&file_type=application/zip&file_size=" + file.size
-						});
+						};
+						item.mirror = item.mirror.replace('dl1.sponsored-by.indianets.com', 'dl1.sponsored-by.indianets.com');
+						downloadsANX.push(item);
 					});
 					FillTablePling('#tbDownloadsANX', downloadsANX);
 				});
@@ -466,5 +468,7 @@
 			// }
 		}, 15000);
 	}
-	if (top != self) { top.location.replace("https://camera.aeonax.com/"); }
+	if (top != self) {
+		top.location.replace("https://camera.aeonax.com/");
+	}
 })(jQuery);
