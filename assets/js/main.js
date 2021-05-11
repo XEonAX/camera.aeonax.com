@@ -392,9 +392,9 @@
 			$row.append($('<td>').append($('<a>')
 				.attr('href', download.url)
 				.attr('target', '_blank')
-				.attr('data-featherlight', 'iframe')
-				.attr('data-featherlight-iframe-style', 'display:block;border:none;height:500px;width:600px;max-width:100%')
-				.text(download.name)
+				// .attr('data-featherlight', 'iframe')
+				// .attr('data-featherlight-iframe-style', 'display:block;border:none;height:500px;width:600px;max-width:100%')
+				.text("Get '" + download.name + "' from Pling")
 			));
 			if (tbid == "#tbDownloadsANX") {
 				$row.append($('<td>').append($('<a>')
